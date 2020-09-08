@@ -2,14 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="./sass/main.css">
+
   <title>Home page</title>
 </head>
 <body>
+  <div id="home">
+    <!-- HERO AREA START -->
+    <div class="hero" id="hero">
+      <div class="hero__heading container">
+        <div class="hero__logo">
+          <img src="./images/UI/logo/logo-white.png" alt="logo-white">
+        </div>
+        <ul class="hero__menu">
+          <li class="active">
+            <a href="#">features</a>
+          </li>
+          <li>
+            <a href="#">about</a>
+          </li>
+          <li>
+            <a href="#">tutorial</a>
+          </li>
+        </ul>
+        <div class="hero__auth">
+          <button class="hero__auth-login">Login</button>
+          <button href="#" class="btn btn-warning">
+            Sign up
+          </button>
+        </div>
+      </div>
+      <div class="hero__sub-heading container">
+        <div style="width: 7rem;">
+          <!-- Place holder element -->
+        </div>
+        <form action="#" class="hero__search">
+          <button>
+            <img src="./images/Icons/search.png" alt="search">
+          </button>
+          <input type="text" placeholder="Search the poll...">
+        </form>
+        <div class="hero__language">
+          <div class="d-flex align-items-center" 
+              @click="showLangs = !showLangs">
+            <h6>Languages</h6>
+            <img src="./images/Icons/down-arrow.png" alt="arrow down">
+          </div>
+          <div class="hero__language-tip" v-if="showLangs">
+            <div class="d-flex align-items-center mb-2"
+                v-for="lang in listOfLanguages">
+              <img :src="lang.img" alt="img"> |
+              <span>{{ lang.desc }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__content container">
+        <h2 class="hero__title">
+          Want to create a poll as fast as possible ??
+        </h2>
+        <button class="hero__CTA">
+          create poll
+        </button>
+      </div>
   
+      <div class="hero__steps">
+        <div class="container">
+          <div 
+            v-for="(step, index) in listOfStep" 
+            class="hero__step">
+            <div class="hero__step-number"
+                :style="{border: '4.7px solid ' + step.color}">
+              <span>STEP</span>
+              <span>{{ index }}</span>
+            </div>
+            <div class="hero__step-desc">
+              <h6> {{ step.content }} </h6>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!-- HERO AREA END HERE -->
+  </div>
+  <script src="./js/home.js"></script>
 </body>
 </html>

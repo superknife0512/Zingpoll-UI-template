@@ -1,0 +1,14 @@
+$color-primary: #00B2FF;
+$color-secondary: #2F80ED;
+$color-third: #FBBC42;
+
+$color-text: #333;
+$background-color-1: #f3f3f3;
+
+.btn-warning {
+  background-color: $color-third;
+
+  &:hover {
+    background-color: #e2a62e;
+  }
+}

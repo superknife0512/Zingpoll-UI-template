@@ -36,8 +36,10 @@
           </li>
         </ul>
         <div class="hero__auth">
-          <button class="hero__auth-login">Login</button>
-          <button href="#" class="btn btn-warning">
+          <button 
+            @click="signinPopup = true"
+            class="hero__auth-signin">Sign in </button>
+          <button href="#" class="btn btn-warning" @click="signupPopup = true">
             Sign up
           </button>
         </div>
@@ -96,7 +98,6 @@
         
       </div>
     </div>
-    <!-- HERO AREA END HERE -->
 
     <!-- FORM START HERE -->
     <div class="crePoll container" id="crePoll">
@@ -183,7 +184,158 @@
         </div>
       </form>
     </div>
-    <!-- FORM END HERE -->
+    
+    <!-- FEATURES START HERE -->
+    <div class="features">
+      <div class="container">
+        <div class="heading-1--white">
+          <h3>Features</h3>
+          <p>The reason you should choose us for your business</p>
+        </div>
+        <div class="features__group">
+          <figure class="features__each" v-for="feature in listOfFeatures">
+            <img :src="feature.img" alt="feature">
+            <h5> {{ feature.title }} </h5>
+            <p> {{ feature.desc }} </p>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- TUTORIAL START HERE -->
+    <div class="tutorial">
+      <div class="heading-1 mb-4">
+        <h3>Tutorial</h3>
+        <p>Watch our tutorial video to understand the create poll flow</p>
+      </div>
+      <div class="tutorial__video container">
+        <iframe id="ytplayer" type="text/html" width="840" height="460"
+        src="https://www.youtube.com/embed/Er9wTGSeDyc?rel=0&vq=hd1080"
+        frameborder="0"></iframe>
+      </div>
+    </div>
+    <!-- TUTORIAL END HERE -->
+    
+    <footer class="footer">
+      <div class="container footer__top">
+        <a 
+          href="https://axonactive.com"
+          target="blank"
+            class="footer__logo">
+          <img src="./images/UI/logo/axon-logo.png" alt="Logo">
+        </a>
+        <div class="footer__infos">
+          <div class="footer__info">
+            <svg>
+              <use xlink:href="./images/Icons/iconsList.svg#icon-location" />
+            </svg>
+            <p>HO CHI MINH CITY, VIETNAM
+              39B Truong Son Street,
+              Ward 4, Tan Binh District,
+              Ho Chi Minh City, Vietnam</p>          
+          </div>
+        </div>
+        <div class="footer__infos">
+          <div class="footer__info">
+            <svg>
+              <use xlink:href="./images/Icons/iconsList.svg#icon-location" />
+            </svg>
+            <p>DA NANG, VIET NAM</p>          
+          </div>
+          <div class="footer__info">
+            <svg>
+              <use xlink:href="./images/Icons/iconsList.svg#icon-location" />
+            </svg>
+            <p>SAN FRANCISCO, USA</p>          
+          </div>
+          <div class="footer__info">
+            <svg>
+              <use xlink:href="./images/Icons/iconsList.svg#icon-location" />
+            </svg>
+            <p>LUZERN, SWITZERLAND</p>          
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container footer__bottom">
+        <p>A product of AXON ACTIVE VIETNAM © 2020 | All rights reserved.</p>
+        <p>Terms of Service | Privacy Statement</p>
+      </div>
+    </footer>
+
+    <!-- SIGN IN POPUP HERE -->
+    <div class="auth" v-if="signinPopup">
+      <div class="backdrop" @click="signinPopup = false"></div>
+      <div class="auth__popup">
+        <div class="auth__left heading-1 mb-4">
+          <h3>Sign in</h3>
+          <p>If you are a new user please click 
+            <a href="#" @click="switchAuth()">here to signup</a> 
+          </p>
+          <form action="#">
+            <div class="form-group">
+              <label for="email">Email: </label>
+              <input type="text" class="form-style" name="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="email">Password: </label>
+              <input type="password" class="form-style" name="password" placeholder="Enter your password">
+            </div>
+            <div class="auth__btns">
+              <a href="#">Forgot your password?</a>
+              <button class="btn-style btn-style--standard">
+                Sign in
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="auth__social">
+          <button class="btn-google mb-2">Sign in by google</button>
+          <button class="btn-fb">Sign in by facebook</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGN UP POPUP HERE -->
+    <div class="auth" v-if="signupPopup">
+      <div class="backdrop" @click="signupPopup = false"></div>
+      <div class="auth__popup">
+        <div class="auth__left heading-1 mb-4">
+          <h3>Sign up</h3>
+          <p>If you have registered please click
+            <a href="#" @click="switchAuth()">here to signin</a> 
+          </p>
+          <form action="#">
+            <div class="form-group">
+              <label for="email">Name: </label>
+              <input type="text" class="form-style" name="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email: </label>
+              <input type="text" class="form-style" name="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="email">Password: </label>
+              <input type="password" class="form-style" name="password" placeholder="Enter your password">
+            </div>
+            <div class="form-group">
+              <label for="email">Confirm password: </label>
+              <input type="password" class="form-style" name="password" placeholder="Enter your password">
+            </div>
+            <div class="auth__btns">
+              <a href="#">Forgot your password?</a>
+              <button class="btn-style btn-style--standard">
+                Sign up
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="auth__social">
+          <button class="btn-google mb-2">Sign in by google</button>
+          <button class="btn-fb">Sign in by facebook</button>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="./js/home.js"></script>
 </body>

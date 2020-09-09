@@ -8,5 +8,16 @@
   p {
     font-size: 1.1rem;
   }
+  
+  &--white {
+    color: white;
+    & > h3, & > h2, & > h1 {
+      font-size: 2rem;
+      font-family: $font-title;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
 
 }

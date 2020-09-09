@@ -1,5 +1,6 @@
 new Vue({
   el: '#home',
+  
   data: {
     listOfStep: [
       {
@@ -33,6 +34,17 @@ new Vue({
         desc: 'Indonesia'
       }
     ],
-    showLangs: false
+    showLangs: false,
+    questionType: 'Single'
+  },
+
+  methods: {
+    switchKey() {
+      if (this.questionType === 'Single') {
+        this.questionType = 'Multiple'
+      } else {
+        this.questionType = 'Single'
+      }
+    }
   }
 })

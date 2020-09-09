@@ -48,7 +48,9 @@
         </div>
         <form action="#" class="hero__search">
           <button>
-            <img src="./images/Icons/search.png" alt="search">
+            <svg>
+              <use xlink:href="./images/Icons/iconsList.svg#icon-search"></use>
+            </svg>
           </button>
           <input type="text" placeholder="Search the poll...">
         </form>
@@ -71,9 +73,9 @@
         <h2 class="hero__title">
           Want to create a poll as fast as possible ??
         </h2>
-        <button class="hero__CTA">
+        <a href="#crePoll" class="hero__CTA">
           create poll
-        </button>
+        </a>
       </div>
   
       <div class="hero__steps">
@@ -95,6 +97,93 @@
       </div>
     </div>
     <!-- HERO AREA END HERE -->
+
+    <!-- FORM START HERE -->
+    <div class="crePoll container" id="crePoll">
+      <div class="heading-1">
+        <h3>Create poll</h3>
+        <p>Follow these steps and create your own poll</p>
+      </div>
+      <form action="#" class="crePoll__form">
+        <div class="form-group">
+          <input 
+            type="text" 
+            class="form-style" 
+            name="question"
+            placeholder="Enter your question">
+        </div>
+        <div class="form-group">
+          <div class="crePoll__switch" @click="switchKey()">
+            <div :class="{switched: questionType === 'Multiple'}">
+              {{ questionType }}
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input 
+              type="text" 
+              class="form-style" 
+              name="answer-1"
+              placeholder="Enter option 1...">
+          <div class="crePoll__control">
+            <svg class="crePoll__control--picture">
+              <use xlink:href="./images/Icons/iconsList.svg#icon-picture"></use>
+            </svg>
+            <svg class="crePoll__control--trash">
+              <use xlink:href="./images/Icons/iconsList.svg#icon-bin"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="form-group">
+          <input 
+              type="text" 
+              class="form-style" 
+              name="answer-2"
+              placeholder="Enter option 2...">
+          <div class="crePoll__control">
+            <svg class="crePoll__control--picture">
+              <use xlink:href="./images/Icons/iconsList.svg#icon-picture"></use>
+            </svg>
+            <svg class="crePoll__control--trash">
+              <use xlink:href="./images/Icons/iconsList.svg#icon-bin"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="form-group">
+          <input 
+              type="text" 
+              class="form-style" 
+              name="answer-2"
+              placeholder="More options...">
+        </div>
+        <div class="form-group">
+          <input 
+              type="text" 
+              class="form-style" 
+              name="answer-2"
+              placeholder="Please enter your email (or login)...">
+        </div>
+        <div class="crePoll__setup">
+          <div class="crePoll__config">
+            <svg>
+              <use xlink:href="./images/Icons/iconsList.svg#icon-cog" />
+            </svg>
+            <p>Configure Poll</p>
+          </div>
+          <div class="crePoll__button-group">
+            <button class="btn-style btn-style--mediumGray">Reset</button>
+            <button class="btn-style btn-style--lightGray">
+              <svg>
+                <use xlink:href="./images/Icons/iconsList.svg#icon-eye" />
+              </svg>
+              <span> Preview </span>
+            </button>
+            <button class="btn-style btn-style--standard">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- FORM END HERE -->
   </div>
   <script src="./js/home.js"></script>
 </body>

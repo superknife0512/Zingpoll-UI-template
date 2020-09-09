@@ -1,0 +1,28 @@
+.btn-style {
+  background-color: rgb(235, 235, 235);
+  padding: .8rem 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+    @include tiny-shadow(.2);
+    transform: translateY(-.4rem);
+  }
+
+  &--lightGray {
+    background-color: #F3F3F3;
+  }
+
+  &--mediumGray {
+    background-color: #DEDEDE;
+  }
+
+  &--standard {
+    background-color: #F2C94C;
+  }
+}

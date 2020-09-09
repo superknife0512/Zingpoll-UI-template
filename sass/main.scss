@@ -4,8 +4,13 @@
 @import './helpers';
 @import './mixins/boxShadow';
 
+@import './components/form';
+@import './components/heading';
+@import './components/button';
+
 @import './pages/home';
 
 body {
-  color: #333
+  color: #333;
+  font-family: $font-primary;
 }

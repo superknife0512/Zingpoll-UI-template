@@ -2,11 +2,11 @@ $padding-distance: 1.6rem;
 
 .hero {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
   background-image: url('../images/UI/abstraction1.png'), linear-gradient(
     to bottom right ,
-    #56CCF2 50%,
+    #56CCF2 42%,
     #198dcf
   );
   background-position: bottom;
@@ -118,8 +118,16 @@ $padding-distance: 1.6rem;
         background-color: $color-primary;
       }
 
-      img {
+      svg {
         height: 1.3rem;
+        width: 1.3rem;
+        fill: #444;
+      }
+
+      &:hover {
+        svg {
+          fill: white;
+        }
       }
     }
 
@@ -131,8 +139,12 @@ $padding-distance: 1.6rem;
       color: white;
       width: 24rem;
       outline: none;
+      transition: all .2s;
       &::placeholder {
         color: white;
+      }
+      &:focus {
+        background-color: rgba($color: #000000, $alpha: .6);
       }
     }
   }
@@ -176,23 +188,30 @@ $padding-distance: 1.6rem;
     color: white;
     text-align: center;
     margin-top: 12%;
+    font-family: $font-title;
   }
 
   &__title {
-    margin-bottom: 1.9rem;
+    margin-bottom: 2.3rem;
   }
   &__CTA {
-    font-family: $font-title;
-    padding: .8rem 2rem;
-    border: none;
-    border-radius: 200rem;
-    text-transform: uppercase;
-    color: $color-primary;
-    cursor: pointer;
-    transition: all .3s;
+    &:link, &:visited {
+      font-family: $font-title;
+      padding: .8rem 2rem;
+      border: none;
+      border-radius: 200rem;
+      text-transform: uppercase;
+      color: $color-primary;
+      cursor: pointer;
+      transition: all .3s;
+      background-color: #fff;
+      text-decoration: none;
+      display: inline-block
+    }   
+    
     &:hover {
       @include small-shadow(.28);
-      transform: translateY(-.8rem);
+      transform: translateY(-.7rem);
     }
   }
 
@@ -228,5 +247,104 @@ $padding-distance: 1.6rem;
   }
   &__step-desc{
     margin-bottom: 0;
+  }
+}
+
+$sw-height: 2.8rem;
+.crePoll {
+  padding: 5rem 0;
+
+  &__form {
+    margin-top: 2.5rem;
+  }
+
+  &__switch {
+    height: $sw-height;
+    width: 15rem;
+    background-color: #EAEAEA;
+    border-radius: 400rem;
+    div {
+      height: 100%;
+      width: 7.5rem;
+      background-color: $color-third;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 200rem;
+      cursor: pointer;
+      transition: all .2s;
+      @include tiny-shadow(.3);
+
+      &:hover {
+        transform: translateY(-.1rem);
+      }
+
+      &.switched {
+        transform: translateX(7.5rem);
+      }
+    }
+  } 
+
+  &__control {
+    display: flex;
+    position: absolute;
+    right: 2rem;
+    top:50%;
+    transform: translateY(-50%);
+
+    svg {
+      height: 1.8rem;
+      width: 1.8rem;
+      cursor: pointer;
+      &:hover {
+        fill: $color-third;
+      }
+    }
+    &--picture {
+      fill: #666;
+      margin-right: 1rem;
+    }
+
+    &--trash {
+      fill: #666;
+    }
+  }
+
+  &__setup {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__config {
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 1rem;
+      height: 1.7rem;
+      width: 1.7rem;
+      fill: rgb(6, 50, 75);
+    }
+    p{
+      border-bottom: 1px solid #444;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+  }
+
+  &__button-group {
+    display: flex;
+
+    svg {
+      fill: #444;
+      height: 1.1rem;
+      width: 1.1rem;
+      margin-right: .6rem;
+    }
+
+    button {
+      &:not(:last-child) {
+        margin-right: 1.7rem;
+      }
+    }
   }
 }

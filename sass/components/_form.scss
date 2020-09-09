@@ -1,0 +1,17 @@
+.form-style{
+  width: 100%;
+  padding: .5rem 1.8rem;
+  border-radius: 200rem;
+  background-color: #F5F5F5;
+  @include tiny-shadow(.18);
+  border: none;
+  outline: none;
+  height: 3.2rem;
+  transition: all .4s;
+  position: relative;
+
+  &:focus {
+    @include small-shadow(.3);
+    transform: translateY(-.4rem);
+  }
+}

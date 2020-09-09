@@ -1,5 +1,13 @@
+// Helper are modified classes from library
 .container {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.form-group {
+  position: relative;
+  &:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
 }

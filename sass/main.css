@@ -1,9 +1,9 @@
 .btn-warning {
-  background-color: #FBBC42;
+  background-color: #F2C94C;
 }
 
 .btn-warning:hover {
-  background-color: #e2a62e;
+  background-color: #e2b82e;
 }
 
 .container {
@@ -12,12 +12,88 @@
   padding: 0 1rem;
 }
 
+.form-group {
+  position: relative;
+}
+
+.form-group:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.form-style {
+  width: 100%;
+  padding: .5rem 1.8rem;
+  border-radius: 200rem;
+  background-color: #F5F5F5;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.18);
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.18);
+  border: none;
+  outline: none;
+  height: 3.2rem;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  position: relative;
+}
+
+.form-style:focus {
+  -webkit-box-shadow: 2px 6px 5px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 6px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateY(-0.4rem);
+          transform: translateY(-0.4rem);
+}
+
+.heading-1 > h3, .heading-1 > h2, .heading-1 > h1 {
+  font-size: 2rem;
+  color: #00B2FF;
+  font-family: "Roboto", sans-serif;
+}
+
+.heading-1 p {
+  font-size: 1.1rem;
+}
+
+.btn-style {
+  background-color: #ebebeb;
+  padding: .8rem 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.btn-style:hover {
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-0.4rem);
+          transform: translateY(-0.4rem);
+}
+
+.btn-style--lightGray {
+  background-color: #F3F3F3;
+}
+
+.btn-style--mediumGray {
+  background-color: #DEDEDE;
+}
+
+.btn-style--standard {
+  background-color: #F2C94C;
+}
+
 .hero {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
-  background-image: url("../images/UI/abstraction1.png"), -webkit-gradient(linear, left top, right bottom, color-stop(50%, #56CCF2), to(#198dcf));
-  background-image: url("../images/UI/abstraction1.png"), linear-gradient(to bottom right, #56CCF2 50%, #198dcf);
+  background-image: url("../images/UI/abstraction1.png"), -webkit-gradient(linear, left top, right bottom, color-stop(42%, #56CCF2), to(#198dcf));
+  background-image: url("../images/UI/abstraction1.png"), linear-gradient(to bottom right, #56CCF2 42%, #198dcf);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: auto;
@@ -156,8 +232,14 @@
   background-color: #00B2FF;
 }
 
-.hero__search button img {
+.hero__search button svg {
   height: 1.3rem;
+  width: 1.3rem;
+  fill: #444;
+}
+
+.hero__search button:hover svg {
+  fill: white;
 }
 
 .hero__search input {
@@ -168,6 +250,8 @@
   color: white;
   width: 24rem;
   outline: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .hero__search input::-webkit-input-placeholder {
@@ -184,6 +268,10 @@
 
 .hero__search input::placeholder {
   color: white;
+}
+
+.hero__search input:focus {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .hero__language {
@@ -233,13 +321,14 @@
   color: white;
   text-align: center;
   margin-top: 12%;
+  font-family: "Roboto", sans-serif;
 }
 
 .hero__title {
-  margin-bottom: 1.9rem;
+  margin-bottom: 2.3rem;
 }
 
-.hero__CTA {
+.hero__CTA:link, .hero__CTA:visited {
   font-family: "Roboto", sans-serif;
   padding: .8rem 2rem;
   border: none;
@@ -249,13 +338,16 @@
   cursor: pointer;
   -webkit-transition: all .3s;
   transition: all .3s;
+  background-color: #fff;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .hero__CTA:hover {
   -webkit-box-shadow: 2px 6px 5px 0px rgba(0, 0, 0, 0.28);
           box-shadow: 2px 6px 5px 0px rgba(0, 0, 0, 0.28);
-  -webkit-transform: translateY(-0.8rem);
-          transform: translateY(-0.8rem);
+  -webkit-transform: translateY(-0.7rem);
+          transform: translateY(-0.7rem);
 }
 
 .hero__steps {
@@ -313,7 +405,132 @@
   margin-bottom: 0;
 }
 
+.crePoll {
+  padding: 5rem 0;
+}
+
+.crePoll__form {
+  margin-top: 2.5rem;
+}
+
+.crePoll__switch {
+  height: 2.8rem;
+  width: 15rem;
+  background-color: #EAEAEA;
+  border-radius: 400rem;
+}
+
+.crePoll__switch div {
+  height: 100%;
+  width: 7.5rem;
+  background-color: #F2C94C;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 200rem;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+.crePoll__switch div:hover {
+  -webkit-transform: translateY(-0.1rem);
+          transform: translateY(-0.1rem);
+}
+
+.crePoll__switch div.switched {
+  -webkit-transform: translateX(7.5rem);
+          transform: translateX(7.5rem);
+}
+
+.crePoll__control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.crePoll__control svg {
+  height: 1.8rem;
+  width: 1.8rem;
+  cursor: pointer;
+}
+
+.crePoll__control svg:hover {
+  fill: #F2C94C;
+}
+
+.crePoll__control--picture {
+  fill: #666;
+  margin-right: 1rem;
+}
+
+.crePoll__control--trash {
+  fill: #666;
+}
+
+.crePoll__setup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.crePoll__config {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.crePoll__config svg {
+  margin-right: 1rem;
+  height: 1.7rem;
+  width: 1.7rem;
+  fill: #06324b;
+}
+
+.crePoll__config p {
+  border-bottom: 1px solid #444;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.crePoll__button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.crePoll__button-group svg {
+  fill: #444;
+  height: 1.1rem;
+  width: 1.1rem;
+  margin-right: .6rem;
+}
+
+.crePoll__button-group button:not(:last-child) {
+  margin-right: 1.7rem;
+}
+
 body {
   color: #333;
+  font-family: "Open Sans", sans-serif;
 }
 /*# sourceMappingURL=main.css.map */

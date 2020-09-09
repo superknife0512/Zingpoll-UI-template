@@ -1,0 +1,12 @@
+.heading-1 {
+  & > h3, & > h2, & > h1 {
+    font-size: 2rem;
+    color: $color-primary;
+    font-family: $font-title;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+}

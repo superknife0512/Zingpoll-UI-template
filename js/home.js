@@ -68,8 +68,17 @@ new Vue({
         desc: 'Get more response by promoting your poll on Facebook, Google +, Twitter and emails.'
       },
     ],
+
     signinPopup: false,
     signupPopup: false,
+
+    formSetting: {
+      setVotingTime: false,
+      setVotingLimit: false,
+      participantType: 'public',
+      addingGroupPopup: false,
+      isShow: false
+    }
   },
 
   methods: {
@@ -83,6 +92,18 @@ new Vue({
     switchAuth() {
       this.signinPopup = !this.signinPopup;
       this.signupPopup = !this.signupPopup
+    },
+    setVotingTime() {
+      this.formSetting.setVotingTime = !this.formSetting.setVotingTime
+    },
+    addGroup() {
+      alert('Has been add group');
+      this.formSetting.addingGroupPopup = false
     }
-  }
+  },
+  computed: {
+    addingUserSection() {
+      return this.formSetting.participantType === 'groupOfUsers';
+    }
+  },
 })

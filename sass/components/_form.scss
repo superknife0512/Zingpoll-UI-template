@@ -14,4 +14,98 @@
     @include small-shadow(.3);
     transform: translateY(-.4rem);
   }
+
+  &--textarea {    
+    border-radius: .8rem;
+    height: 7rem;
+    width: 100%;
+    font-size: .8rem;
+  }
+}
+
+// This group of class should be put together with form-group class
+.checkbox-style {
+  input[type=checkbox] {
+    display: none;
+  }
+
+  label {
+    display: flex;
+    span {
+      cursor: pointer;
+    }
+  }
+
+  &__fake {
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: .2rem;
+    background-color: #EFEFEF;
+    @include tiny-shadow(.25);
+    display: inline-block;
+    margin-right: 0.7rem;
+    cursor: pointer;
+  }
+
+  input:checked + label &__fake {
+    background-color: $color-primary;
+    position: relative;
+
+    &::after {
+      content: url('../images/Icons/tick.svg');
+      height: 1.6rem;
+      width: 1.6rem;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      animation: popin .5s ease-in-out;
+    }
+  } 
+
+}
+
+.radio-style {
+  input[type=radio] {
+    display: none
+  }
+  label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__fake {
+    height: 1.4rem;
+    width: 1.4rem;
+    background-color: #EFEFEF;
+    border-radius: 50%;
+    @include tiny-shadow(.2);
+    margin-right: 0.6rem;
+  }
+
+  input[type=radio]:checked + label &__fake{
+    position: relative;
+    &::after {
+      content: "";
+      height: .5rem;
+      width: .5rem;
+      background-color: $color-primary;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      border-radius: 50%;
+      animation: popin .4s ease-in;
+    }
+  }
+}
+
+@keyframes popin {
+  0% {
+    transform: scale(.6);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

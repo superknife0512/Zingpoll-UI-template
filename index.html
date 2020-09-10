@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -165,7 +165,7 @@
               placeholder="Please enter your email (or login)...">
         </div>
         <div class="crePoll__setup">
-          <div class="crePoll__config">
+          <div class="crePoll__config" @click="formSetting.isShow = true">
             <svg>
               <use xlink:href="./images/Icons/iconsList.svg#icon-cog" />
             </svg>
@@ -184,7 +184,7 @@
         </div>
       </form>
     </div>
-    
+
     <!-- FEATURES START HERE -->
     <div class="features">
       <div class="container">
@@ -334,6 +334,250 @@
           <button class="btn-google mb-2">Sign in by google</button>
           <button class="btn-fb">Sign in by facebook</button>
         </div>
+      </div>
+    </div>
+
+    <!-- SETTING POPUP HERE -->
+    <div class="setting" v-if="formSetting.isShow">
+      <div class="backdrop" @click="formSetting.isShow = false"></div>
+      <div class="setting__popup">
+        <div class="heading-1">
+          <h3>Setting</h3>
+          <p>Customize your poll here</p>
+        </div>
+        <form action="#" class="setting__form mt-4">
+          <div class="d-flex">
+            <div class="setting__form-left">
+              <div class="form-group checkbox-style">
+                <input type="checkbox" id="optimize" name="optimize" checked disabled>
+                <label for="optimize">
+                  <span class="checkbox-style__fake"></span>
+                  <span>Optimize poll link</span>
+                </label>
+                <div class="setting__optimize">
+                  <p>https://test.zingpoll.com/ </p>
+                  <input type="text" value="abcxaish"> 
+                </div>
+              </div>
+              <div class="form-group checkbox-style">
+                <input type="checkbox" id="requireEmail" name="requireEmail">
+                <label for="requireEmail">
+                  <span class="checkbox-style__fake"></span>
+                  <span>Require email to voting</span>
+                </label>
+              </div>
+              <div class="form-group checkbox-style">
+                <input type="checkbox" id="requireName" name="requireName">
+                <label for="requireName">
+                  <span class="checkbox-style__fake"></span>
+                  <span>Require name to voting</span>
+                </label>
+              </div>
+              <div class="form-group checkbox-style">
+                <input type="checkbox" id="hideResult" name="hideResult">
+                <label for="hideResult">
+                  <span class="checkbox-style__fake"></span>
+                  <span>Hide voting result</span>
+                </label>
+              </div>
+              <div class="form-group checkbox-style">
+                <input 
+                  type="checkbox" 
+                  id="setVotingTime" 
+                  @change="setVotingTime()" 
+                  name="setting">
+                <label for="setVotingTime">
+                  <span class="checkbox-style__fake"></span>
+                  <span>Set voting time</span>
+                </label>
+    
+                <div class="setting__time-config" v-if="formSetting.setVotingTime">
+                  <p>Duration</p>
+                  <div class="setting__day-hour">
+                    <div class="form-group">
+                      <input type="text" class="form-style" name="days" placeholder="Days">
+                      <div class="setting__day-icon">
+                        <svg>
+                          <use xlink:href="./images/Icons/iconsList.svg#icon-calendar" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-style" placeholder="Hours" name="hours">
+                      <div class="setting__day-icon">
+                        <svg>
+                          <use xlink:href="./images/Icons/iconsList.svg#icon-alarm" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="setting__start-type">
+                    <div class="form-group radio-style">
+                      <input type="radio" id="manual" name="typeSetting">
+                      <label for="manual">
+                        <span class="radio-style__fake"></span>
+                        <span>Manual start</span> 
+                      </label>
+                    </div>
+                    <div class="form-group radio-style">
+                      <input type="radio" id="auto" name="typeSetting">
+                      <label for="auto">
+                        <span class="radio-style__fake"></span>
+                        <span>Auto start</span> 
+                      </label>
+                    </div>
+                  </div>
+    
+                  <div class="d-flex align-items-center setting__day-hour">
+                    <div class="form-group">
+                      <input type="text" class="form-style" name="days" placeholder="Days">
+                      <div class="setting__day-icon">
+                        <svg>
+                          <use xlink:href="./images/Icons/iconsList.svg#icon-calendar" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-style" placeholder="Hours" name="hours">                  
+                      <div class="setting__day-icon">
+                        <svg>
+                          <use xlink:href="./images/Icons/iconsList.svg#icon-alarm" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+            <div class="setting__form-right">
+              <div class="form-group checkbox-style">
+                <input 
+                  type="checkbox" 
+                  id="votingLimit" 
+                  name="votingLimit"
+                  v-on:change="formSetting.setVotingLimit = !formSetting.setVotingLimit">
+                <label for="votingLimit">
+                  <span class="checkbox-style__fake"></span>
+                  <span>Set voting limit</span>
+                </label>
+                <div class="setting__optimize">
+                  <p>Poll will close after </p>
+                  <input type="number" value="0" :disabled="!formSetting.setVotingLimit"> 
+                  <p>votes</p>
+                </div>
+              </div>
+              <div class="form-group checkbox-style">
+                <input type="checkbox" id="allowEditAnswers" name="allowEditAnswers">
+                <label for="allowEditAnswers">
+                  <span class="checkbox-style__fake"></span>
+                  <span>Alow voter edit their answers</span>
+                </label>
+              </div>
+              <div class="form-group checkbox-style">
+                <input type="checkbox" id="participants" name="participants" checked disabled>
+                <label for="participants">
+                  <span class="checkbox-style__fake"></span>
+                  <span>Participants</span>
+                </label>
+                <div class="setting__participant-type">
+                  <div class="form-group radio-style">
+                    <input 
+                      type="radio" 
+                      id="public" 
+                      value="public"
+                      name="participantSet"
+                      v-model="formSetting.participantType">
+                    <label for="public">
+                      <span class="radio-style__fake"></span>
+                      <span>Public</span> 
+                    </label>
+                  </div>
+                  <div class="form-group radio-style">
+                    <input 
+                      type="radio" 
+                      id="groupOfUsers" 
+                      value="groupOfUsers"
+                      name="participantSet"
+                      v-model="formSetting.participantType">
+                    <label for="groupOfUsers">
+                      <span class="radio-style__fake"></span>
+                      <span>Group of users</span> 
+                    </label>
+                  </div>
+                  <div class="form-group radio-style">
+                    <input 
+                      type="radio" 
+                      id="zingpollCom" 
+                      value="zingpollCom"
+                      name="participantSet"
+                      v-model="formSetting.participantType">
+                    <label for="zingpollCom">
+                      <span class="radio-style__fake"></span>
+                      <span>Zingpoll Community</span> 
+                    </label>
+                  </div>
+                </div>
+                <div class="setting__participant-adding mt-2" >
+                  <a 
+                    href="#" 
+                    class="mb-2"
+                    @click="formSetting.addingGroupPopup = true">Add new group</a>
+                  <div class="form-group" v-if="addingUserSection">
+                    <label for="addEmail">Add Emails</label>
+                    <textarea name="addEmail" 
+                              class="form-style form-style--textarea"
+                              placeholder="separate by ',' Ex: test1@gmail.com, test2@gmail.com"></textarea>
+                  </div>
+                  <div class="form-group" v-if="addingUserSection">
+                    <label for="addEmail">Add Domains</label>
+                    <textarea name="addEmail" 
+                              class="form-style form-style--textarea"
+                              placeholder="separate by ',' Ex: axonactive.com, outlook.com"></textarea>
+                  </div>
+                </div>  
+              </div>              
+            </div>
+          </div>
+          <button 
+            type="submit" 
+            class="btn-style btn-style--standard">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ADDING GROUP POPUP HERE -->
+    <div class="addingGroup" v-if="formSetting.addingGroupPopup">
+      <div class="addingGroup__popup">
+        <div class="heading-1">
+          <h3>Adding group</h3>
+          <p>Create a group of users for using next time</p>
+        </div>
+        <form action="#">
+          <div class="form-group">
+            <label for="name">Group name</label>
+            <input type="text" class="form-style" placeholder="Group name">
+          </div>
+          <div class="form-group">
+            <label for="name">Participant emails</label>
+            <textarea 
+              name="participantEmails"
+              class="form-style form-style--textarea" 
+              placeholder="separate by ',' Ex: test1@gmail.com, test2@gmail.com"></textarea>
+          </div>
+          <div class="d-flex">
+            <button class="btn-style btn-mediumgGray mr-2"
+                    @click="formSetting.addingGroupPopup = false">
+              Cancel
+            </button>
+            <button class="btn-style btn-style--primary"
+                    @click.prevent="addGroup()">
+              Add group
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

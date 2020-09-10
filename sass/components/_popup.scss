@@ -52,6 +52,133 @@
   }
 }
 
+$indentation: 2.2rem;
 .setting {
+  &__popup {
+    @extend %commonPopup;
+    display: flex;
+    flex-direction: column;
+  }
 
+  &__form {
+    display: flex;
+    flex-direction: column;    
+    .btn-style {
+      align-self: flex-end;
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__form-left {
+    padding-right: 1.5rem;
+    border-right: 1px solid rgba($color: rgb(0, 0, 0), $alpha: .2);
+  }
+
+  &__optimize {
+    display: flex;
+    p {
+      margin-bottom: 0;
+    }
+    input {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #000;
+
+      &[disabled=disabled] {
+        color: #a8a8a8;
+        border-bottom: 1px solid #a8a8a8;
+      }
+    }
+  }
+
+  &__time-config{
+    p {
+      margin-left: $indentation;
+      font-size: .9rem;
+      color: rgb(119, 119, 119);
+    }
+  }
+
+  &__day-hour {
+    margin-left: $indentation;
+    display: flex;
+    align-items: center;
+
+    .form-group {
+      position: relative;
+      &:not(:last-child) {
+        margin-bottom: 1.2rem;
+        margin-right: 1rem;
+      }      
+      .form-style {
+        height: 2.4rem;
+        width: 11rem;
+        padding-left: 2.8rem;
+        &:focus {
+          transform: none;
+        }
+      }
+    }
+  }
+  &__day-icon {    
+    height: 2.4rem;
+    width: 2.4rem;
+    background-color: $color-primary;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    svg {
+      fill: white;
+      height: 1.3rem;
+      width: 1.3rem;
+    }
+  }
+  &__day-hour .form-group .form-style:focus ~ &__day-icon {
+    background-color: $color-third;
+  }
+  &__start-type {
+    margin-left: $indentation;
+    .form-group {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__form-right {
+    padding-left: 1.5rem;
+    min-width: 28rem;
+    input[type=number] {
+      width: 4rem;
+      padding-left: 1rem;
+    }
+  }
+
+  &__participant-type{
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .form-group {
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+    span {
+      color: rgb(100, 100, 100);
+    }
+  }
+}
+
+.addingGroup {
+  &__popup {
+    @extend %commonPopup;
+    @include small-shadow(.25);
+    flex-direction: column;
+    width: 45rem;
+  }
 }

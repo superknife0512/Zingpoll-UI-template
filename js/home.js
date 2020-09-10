@@ -78,7 +78,9 @@ new Vue({
       participantType: 'public',
       addingGroupPopup: false,
       isShow: false
-    }
+    },
+
+    previewPopup: false
   },
 
   methods: {

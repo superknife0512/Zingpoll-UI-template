@@ -105,7 +105,7 @@ new Vue({
     addGroup() {
       alert('Has been add group');
       this.formSetting.addingGroupPopup = false
-    }
+    },
   },
   computed: {
     addingUserSection() {

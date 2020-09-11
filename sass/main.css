@@ -129,6 +129,10 @@
   }
 }
 
+.form-style--error {
+  background-color: #ffb3b3;
+}
+
 .form-style--textarea {
   border-radius: .8rem;
   height: 7rem;

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="./sass/main.css"> -->
+  <link rel="stylesheet" href="../sass/main.css">
+
+  <title>About page</title>
+</head>
+<body>
+  <div id="about">
+    <header class="nav-style">
+        <div class="container">
+            <div class="nav-style__logo">
+                <a href="/">
+                    <img src="../images/UI/logo/logo.png" alt="logo">
+                </a>
+            </div>
+            <ul class="nav-style__menu">
+                <li>
+                    <a href="/#features">
+                        Features
+                    </a>
+                </li>
+                <li>
+                    <a href="/#tutorial">
+                        Tutorial
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#">
+                        About
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-style__auth">
+                <button class="btn-style btn-style--lightGray mr-2">Sign in</button>
+                <button class="btn-style btn-style--standard"> Sign up </button>
+            </div>
+            <div class="nav-style__resp">
+                <svg @click="resMenu = !resMenu">
+                    <use xlink:href="../images/Icons/iconsList.svg#icon-menu"></use>
+                </svg>
+                <div class="nav-style__resp-menu" v-if="resMenu">
+                    <ul>
+                        <li>
+                            <a href="/#features">
+                                Features
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#tutorial">
+                                Tutorial
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                About
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="nav-style__auth">
+                        <button class="btn-style btn-style--lightGray mr-2">Sign in</button>
+                        <button class="btn-style btn-style--standard"> Sign up </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="subhead">
+        <div class="container">
+            <form action="#" class="subhead__search">
+            <button>
+                <svg>
+                    <use xlink:href="../images/Icons/iconsList.svg#icon-search"></use>
+                </svg>
+            </button>
+            <input type="text" placeholder="Search the poll...">
+            </form>
+            <div class="subhead__language">
+                <div class="d-flex align-items-center" 
+                    @click="showLangs = !showLangs">
+                  <h6>Languages</h6>
+                  <svg>
+                      <use xlink:href="../images/Icons/iconsList.svg#icon-cheveron-down"></use>
+                  </svg>
+                </div>
+                <div class="subhead__language-tip" v-if="showLangs">
+                  <div class="d-flex align-items-center mb-2"
+                      v-for="lang in listOfLanguages">
+                    <img :src="lang.img" alt="img"> |
+                    <span>{{ lang.desc }}</span>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <div class="about-content container">
+        <div class="heading-1 mb-4">
+            <h2>About us</h2>
+            <p>Understand what we do and why we're here</p>
+        </div>
+        <div class="d-flex ">
+            <p>
+                Axon Active is Swiss offshore software development company with strong expertise in Agile IT and a large portfolio of successful international projects, ranging from small businesses to highly complex multi-platform systems for large corporate clients. <br><br>
+
+                Axon Active builds solid partnerships with its clients by assembling tailored development teams in Vietnam who deliver high-quality, innovative solutions at a very competitive price. <br><br>
+
+                In 2008, Swiss-owned and managed, Axon Active created a high-performance, scalable software delivery infrastructure in Vietnam. The 300+ developers’ outsourcing organization offers the perfect mix of talent management, Agile and Scrum practices, technology skills and industry knowledge. <br> <br>
+
+                For more information about: <br>
+                - Axon services & expertise, please visit: 
+                <a href="https://www.axonactive.com" target="blank">
+                    www.axonactive.com
+                </a> <br>
+                - Axon social life, just take a tour:
+                <a href="https://www.fb.com/AxonActiveVietnam" target="blank">
+                    www.fb.com/AxonActiveVietnam
+                </a>
+                <br><br>
+                Axon Active has years of experience in application development. Besides ZingPoll, Axon launched a dozen of awesome applications:
+            </p>
+            <div class="about-content__imgs ml-2">
+                <img src="../images/UI/axon-img (1).png" alt="img1">
+                <img src="../images/UI/axon-img (2).png" alt="img2">
+            </div>
+        </div>
+    </div>
+
+    <hr class="container">
+    <div class="container mt-4">
+        <img src="../images/UI/sample.svg" alt="images" style="width:90%">
+    </div>
+    <footer class="footer">
+        <div class="container footer__top">
+          <a 
+            href="https://axonactive.com"
+            target="blank"
+              class="footer__logo">
+            <img src="../images/UI/logo/axon-logo.png" alt="Logo">
+          </a>
+          <div class="footer__download">
+            <div class="footer__download-google">
+              <a href="https://bom.to/nhbh69F"
+                 target="blank">
+                <img src="../images/UI/logo/google-play-badge.png" alt="google">
+                <img src="../images/UI/qr-gg.PNG" alt="qr">
+              </a>
+            </div>
+            <div class="footer__download-apple">
+              <a href="https://bom.to/6uf7gpz"
+                  target="blank" >
+                <img src="../images/UI/logo/badge-download-on-the-app-store.svg" alt="apple">
+                <img src="../images/UI/qr-apple.PNG" alt="qr">
+              </a>
+            </div>
+          </div>
+          <div class="footer__infos">
+            <div class="footer__info">
+              <svg>
+                <use xlink:href="../images/Icons/iconsList.svg#icon-location" />
+              </svg>
+              <p>DA NANG, VIET NAM</p>          
+            </div>
+            <div class="footer__info">
+              <svg>
+                <use xlink:href="../images/Icons/iconsList.svg#icon-location" />
+              </svg>
+              <p>HCM, VIET NAM</p>          
+            </div>
+            <div class="footer__info">
+              <svg>
+                <use xlink:href="../images/Icons/iconsList.svg#icon-location" />
+              </svg>
+              <p>SAN FRANCISCO, USA</p>          
+            </div>
+            <div class="footer__info">
+              <svg>
+                <use xlink:href="../images/Icons/iconsList.svg#icon-location" />
+              </svg>
+              <p>LUZERN, SWITZERLAND</p>          
+            </div>
+          </div>
+        </div>
+        <div class="container footer__bottom">
+          <p>A product of AXON ACTIVE VIETNAM © 2020 | All rights reserved.</p>
+          <p>Terms of Service | Privacy Statement</p>
+        </div>
+      </footer>
+  </div>
+  <script src="../js/about.js"></script>
+</body>
+</html>

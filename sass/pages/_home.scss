@@ -395,6 +395,10 @@ $sw-height: 2.8rem;
     }
   } 
 
+  &__switch + .form-group .form-style {
+    width: 15rem;
+  }
+
   &__control {
     display: flex;
     position: absolute;

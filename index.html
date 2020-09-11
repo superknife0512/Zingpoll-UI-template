@@ -124,6 +124,10 @@
               {{ questionType }}
             </div>
           </div>
+          <div class="form-group mt-2" v-if="questionType === 'Multiple'">
+            <label for="max">Maximum number of answers</label>
+            <input type="number" class="form-style">
+          </div>
         </div>
         <div class="form-group">
           <input 

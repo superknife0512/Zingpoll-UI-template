@@ -1456,6 +1456,10 @@ input[type=radio]:checked + label .radio-style__fake::after {
           transform: translateX(7.5rem);
 }
 
+.crePoll__switch + .form-group .form-style {
+  width: 15rem;
+}
+
 .crePoll__control {
   display: -webkit-box;
   display: -ms-flexbox;

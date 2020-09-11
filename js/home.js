@@ -48,7 +48,7 @@ new Vue({
         desc: 'Access your poll anytime, anywhere, via most of devices with an Internet connection.'
       },
       {
-        img: './images/UI/illustrative.svg',
+        img: './images/UI/Illustrative.svg',
         title: 'Illustrative',
         desc: 'Visualize your poll in various types of charts.'
       },

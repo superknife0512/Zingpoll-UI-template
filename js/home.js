@@ -72,6 +72,11 @@ new Vue({
     signinPopup: false,
     signupPopup: false,
 
+    signupForm: {
+      email: '',
+      password: '',
+    },
+
     formSetting: {
       setVotingTime: false,
       setVotingLimit: false,
@@ -82,9 +87,25 @@ new Vue({
 
     previewPopup: false,
     resMenu: false,
+
+    validate: {
+      email: false,      
+      password: false,
+    }
   },
 
   methods: {
+    onSignup() {
+      this.validate.email = false;
+      this.validate.password = false
+      if (!/.+@.+/.test(this.signupForm.email)) {
+        this.validate.email = true
+      } else if (this.signupForm.password.length < 6) {
+        this.validate.password = true
+      } else {
+        alert('Submit done')
+      }
+    },
     switchKey() {
       if (this.questionType === 'Single') {
         this.questionType = 'Multiple'

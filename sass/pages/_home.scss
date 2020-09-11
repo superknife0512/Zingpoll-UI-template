@@ -397,6 +397,10 @@ $sw-height: 2.8rem;
 
   &__switch + .form-group .form-style {
     width: 15rem;
+    height: $sw-height;
+    @include responsive(550px) {
+      width: 14rem;
+    }
   }
 
   &__control {
@@ -405,6 +409,9 @@ $sw-height: 2.8rem;
     right: 2rem;
     top:50%;
     transform: translateY(-50%);
+    @include responsive(550px) {
+      right: 1rem;
+    }
 
     svg {
       height: 1.8rem;
@@ -550,6 +557,10 @@ $sw-height: 2.8rem;
     &:hover {
       @include small-shadow(.25);
       transform: translateY(-.7rem);
+
+      @include responsive(550px) {
+        transform: translateY(0);;
+      }
     }
 
     img {
@@ -648,6 +659,32 @@ $sw-height: 2.8rem;
         margin-right: 0;
         margin-bottom: 1rem;
       }
+    }
+
+  }
+  &__download {
+    display: flex;
+    @include responsive(550px) {
+      margin: 1.5rem 0;
+    }
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img[alt=qr] {
+        height: 6rem;
+      }
+    }
+  }
+  &__download-google {
+    img{
+      height: 3.5rem;
+      margin-top: -.5rem;
+    }
+  }
+  &__download-apple {
+    img{
+      height: 2.5rem;
     }
   }
   &__info {

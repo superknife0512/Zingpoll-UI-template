@@ -393,6 +393,7 @@ input[type=radio]:checked + label .radio-style__fake::after {
   fill: white;
   height: 1rem;
   width: 1rem;
+  cursor: pointer;
 }
 
 .btn-close--primary {
@@ -419,11 +420,13 @@ input[type=radio]:checked + label .radio-style__fake::after {
   position: fixed;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%) translateZ(0);
+          transform: translate(-50%, -50%) translateZ(0);
   border-radius: .7rem;
-  -webkit-animation: slideFromTop 1s cubic-bezier(0.18, 1.29, 0.84, 1.02);
-          animation: slideFromTop 1s cubic-bezier(0.18, 1.29, 0.84, 1.02);
+  -webkit-animation: slideFromTop 1s ease;
+          animation: slideFromTop 1s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 @media only screen and (max-width: 945px) {

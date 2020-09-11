@@ -16,9 +16,10 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) translateZ(0);
   border-radius: .7rem;
-  animation: slideFromTop 1s cubic-bezier(.18,1.29,.84,1.02);
+  animation: slideFromTop 1s ease;
+  backface-visibility: hidden;
   @include responsive(945px) {
     width: max-content;
   }

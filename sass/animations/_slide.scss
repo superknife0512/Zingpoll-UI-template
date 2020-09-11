@@ -1,0 +1,29 @@
+@keyframes slideFromTop {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-60%);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.slideFromLeft {
+    animation: slideFromLeft .5s ease;
+}

@@ -14,8 +14,19 @@
     transform: translateY(-.4rem);
   }
 
+  @include responsive(550px) {
+    padding: .6rem 1.2rem;
+    font-size: .8rem;
+  }
+
   &:focus {
     outline: none;
+  }
+
+  &--outline-white {
+    background-color: rgba($color: #000000, $alpha: 0);
+    color: white;
+    border: 1px solid white;
   }
 
   &--lightGray {
@@ -47,6 +58,9 @@
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
+  @include responsive(550px) {
+    width: 100%;
+  }
 }
 
 .btn-google {
@@ -57,4 +71,17 @@
 .btn-fb {
   @extend %socialBtn;
   background-color: rgb(49, 129, 204);
+}
+
+.btn-close {  
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  fill: white;
+  height: 1rem;
+  width: 1rem;
+
+  &--primary {
+    fill: $color-primary
+  }
 }

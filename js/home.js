@@ -80,7 +80,8 @@ new Vue({
       isShow: false
     },
 
-    previewPopup: false
+    previewPopup: false,
+    resMenu: false,
   },
 
   methods: {
@@ -95,8 +96,11 @@ new Vue({
       this.signinPopup = !this.signinPopup;
       this.signupPopup = !this.signupPopup
     },
-    setVotingTime() {
-      this.formSetting.setVotingTime = !this.formSetting.setVotingTime
+    setVotingTime(e) {
+      this.formSetting.setVotingTime = e.target.checked
+    },
+    setVotingLimit(e) {
+      this.formSetting.setVotingLimit = e.target.checked
     },
     addGroup() {
       alert('Has been add group');

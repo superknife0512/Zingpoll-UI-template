@@ -2,11 +2,17 @@
 .container {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 1rem;
+
+  @include responsive(1161px) {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 .form-group {
   position: relative;
+  display: flex;
+  flex-direction: column;
   &:not(:last-child) {
     margin-bottom: 1.6rem;
   }

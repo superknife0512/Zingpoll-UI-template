@@ -1,3 +1,7 @@
+@mixin medium-shadow($opacity) {
+  box-shadow: 17px 6px 20px 11px rgba(0, 0, 0, $opacity)
+}
+
 @mixin small-shadow($opacity) {
   box-shadow: 2px 6px 5px 0px rgba(0,0,0,$opacity);
 }

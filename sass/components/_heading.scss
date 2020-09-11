@@ -3,10 +3,17 @@
     font-size: 2rem;
     color: $color-primary;
     font-family: $font-title;
+    @include responsive(990px) {
+      font-size: 1.5rem;
+    }
+    
   }
 
   p {
     font-size: 1.1rem;
+    @include responsive(990px) {
+      font-size: .9rem;
+    }
   }
   
   &--white {
@@ -14,9 +21,15 @@
     & > h3, & > h2, & > h1 {
       font-size: 2rem;
       font-family: $font-title;
+      @include responsive(990px) {
+        font-size: 1.5rem;
+      }
     }
     p {
       font-size: 1.1rem;
+      @include responsive(990px) {
+        font-size: .9rem;
+      }
     }
   }
 

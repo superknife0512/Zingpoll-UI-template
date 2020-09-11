@@ -18,17 +18,36 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: .7rem;
+  animation: slideFromTop 1s cubic-bezier(.18,1.29,.84,1.02);
+  @include responsive(945px) {
+    width: max-content;
+  }
+  @include responsive(750px) {
+    padding: 1.3rem 2rem;
+  }
+
+  @include responsive(550px) {
+    width: 90% !important;
+  }
 }
 
 .auth {
   &__popup {
     @extend %commonPopup;
+    max-height: 90vh;
+    overflow: auto;
+    @include responsive(870px) {
+      flex-direction: column;
+    }
     form {      
       label {
         color: $color-primary;
       }
       input {
         width: 25rem;
+        @include responsive(550px) {
+          width: 100%;
+        }
       }
     }
   }
@@ -37,11 +56,20 @@
     flex: 5;
     padding-right: 1.5rem;
     border-right: 1px solid rgba($color: #000000, $alpha: .2);
+    @include responsive(870px) {
+      padding-right: 0;
+      border-right: 0;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba($color: #000000, $alpha: .2) ;
+    }
   }
 
   &__social {
     flex: 2;
     padding-left: 1.5rem;
+    @include responsive(870px) {
+      padding-left: 0;
+    }
   }
 
   &__btns {
@@ -58,6 +86,11 @@ $indentation: 2.2rem;
     @extend %commonPopup;
     display: flex;
     flex-direction: column;
+
+    @include responsive(970px) {
+      max-height: 80vh;
+    }
+    
   }
 
   &__form {
@@ -66,12 +99,29 @@ $indentation: 2.2rem;
     .btn-style {
       align-self: flex-end;
       margin-top: 1.5rem;
+      @include responsive(650px) {
+        margin-top: 1rem;
+      }
+    }
+    @include responsive(970px) {
+      overflow: auto;
     }
   }
 
-  &__form-left {
+  &__form-wrap {
+    display: flex;
+    @include responsive(970px) {
+      flex-direction: column;
+    }
+  }
+
+  &__form-left { 
     padding-right: 1.5rem;
     border-right: 1px solid rgba($color: rgb(0, 0, 0), $alpha: .2);
+    @include responsive(970px) {
+      padding-right: 0;
+      border-right: 0;
+    }
   }
 
   &__optimize {
@@ -92,6 +142,7 @@ $indentation: 2.2rem;
   }
 
   &__time-config{
+    animation: slideFromLeft .5s ease;
     p {
       margin-left: $indentation;
       font-size: .9rem;
@@ -103,6 +154,10 @@ $indentation: 2.2rem;
     margin-left: $indentation;
     display: flex;
     align-items: center;
+    @include responsive(550px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     .form-group {
       position: relative;
@@ -143,6 +198,9 @@ $indentation: 2.2rem;
   }
   &__start-type {
     margin-left: $indentation;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     .form-group {
       margin-bottom: 0.5rem;
       display: flex;
@@ -157,6 +215,9 @@ $indentation: 2.2rem;
       width: 4rem;
       padding-left: 1rem;
     }
+    @include responsive(970px) {
+      padding-left: 0;
+    }
   }
 
   &__participant-type{
@@ -164,6 +225,10 @@ $indentation: 2.2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include responsive(550px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     .form-group {
       margin-top: 1rem;
       margin-bottom: 0;
@@ -177,7 +242,7 @@ $indentation: 2.2rem;
 .addingGroup {
   &__popup {
     @extend %commonPopup;
-    @include small-shadow(.25);
+    @include medium-shadow(.25);
     flex-direction: column;
     width: 45rem;
   }
@@ -186,8 +251,12 @@ $indentation: 2.2rem;
 .preview {
   &__popup {
     @extend %commonPopup;
-    flex-direction: column;
     width: 45rem;
+    flex-direction: column;
+    @include responsive(750px) {
+      width: max-content;
+    }
+    max-height: 90vh;
   }
 
   &__section {
@@ -235,6 +304,41 @@ $indentation: 2.2rem;
     a {
       &:link, &:visited {
         color: #555;
+      }
+    }
+  }
+}
+
+.menu-res {
+  &__popup {
+    @extend %commonPopup;
+    background-color: rgba($color: #000000, $alpha: 0);
+    border: 1px solid white;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #fff;
+      margin-bottom: 1rem;
+      li {
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+        a {
+          &:link, &:visited {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+          }
+        }
       }
     }
   }

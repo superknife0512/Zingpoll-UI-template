@@ -1,8 +1,10 @@
 
 @import './variables/color';
 @import './variables/font';
+@import './mixins/responsive'; 
 @import './helpers';
 @import './mixins/boxShadow';
+@import './animations/slide';
 
 @import './components/form';
 @import './components/heading';
@@ -14,4 +16,9 @@
 body {
   color: #333;
   font-family: $font-primary;
+
+  
+  @include responsive(1120px) {
+    font-size: 90%;
+  }
 }

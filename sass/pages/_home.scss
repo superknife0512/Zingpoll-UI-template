@@ -45,6 +45,10 @@ $padding-distance: 1.6rem;
     margin-bottom: 0;
     font-weight: 400;
 
+    @include responsive(650px) {
+      display: none;
+    }
+
     li {
       list-style: none;
       position: relative;
@@ -54,11 +58,17 @@ $padding-distance: 1.6rem;
           color: white;
           text-transform: capitalize;
           text-decoration: none ;
+          @include responsive(880px) {
+            font-size: 1rem;
+          }
         }
       }
       
       &:not(:last-child) {
         margin-right: 3rem;
+        @include responsive(880px) {
+          margin-right: 2rem;
+        }
       }
 
       &::after {
@@ -83,6 +93,28 @@ $padding-distance: 1.6rem;
     }
   }
 
+  &__auth {
+    @include responsive(880px) {
+      font-size: 1rem;
+    }
+    @include responsive(650px) {
+      display: none;
+    }
+  }
+
+  &__responsive {
+    display: none;
+    @include responsive(650px) {
+      display: block;
+      cursor: pointer;
+    }
+    svg {
+      fill: white;
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+
   &__auth-signin {
     background-color: rgba($color: #000000, $alpha: 0);
     border: none;
@@ -97,10 +129,19 @@ $padding-distance: 1.6rem;
     align-items: center;
     justify-content: space-between;
     margin-top: 1.4rem;
+    @include responsive(708px) {      
+      flex-direction: column;
+    }
+    @include responsive(650px) {      
+      margin-top: 1rem;
+    }
   }
 
   &__search {
     display: flex;
+    @include responsive(708px) {      
+      margin-bottom: 1rem;
+    }
     button {
       background-color: rgba($color: #ffffff, $alpha: .78);
       border: 1px white solid;
@@ -114,6 +155,11 @@ $padding-distance: 1.6rem;
       outline: none;
       cursor: pointer;
 
+      @include responsive(650px) {      
+        height: 2.2rem;
+        width: 2.2rem;
+      }
+
       &:hover {
         background-color: $color-primary;
       }
@@ -122,6 +168,10 @@ $padding-distance: 1.6rem;
         height: 1.3rem;
         width: 1.3rem;
         fill: #444;
+        @include responsive(708px) {      
+          height: 1rem;
+          width: 1rem;
+        }
       }
 
       &:hover {
@@ -140,6 +190,9 @@ $padding-distance: 1.6rem;
       width: 24rem;
       outline: none;
       transition: all .2s;
+      @include responsive(550px) {
+        width: auto;
+      }
       &::placeholder {
         color: white;
       }
@@ -189,10 +242,29 @@ $padding-distance: 1.6rem;
     text-align: center;
     margin-top: 12%;
     font-family: $font-title;
+    @include responsive(1040px) {
+      margin-top: 18%;
+    }
+    @include responsive(708px) {      
+      margin-top: 24%;
+    }
+    @include responsive(645px) {      
+      margin-top: 36%;
+    }
   }
 
   &__title {
     margin-bottom: 2.3rem;
+    @include responsive(1040px) {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    @include responsive(708px) {      
+      font-size: 1.6rem;
+    }
+    @include responsive(550px) {
+      font-size: 1.4rem;
+    }
   }
   &__CTA {
     &:link, &:visited {
@@ -216,6 +288,9 @@ $padding-distance: 1.6rem;
   }
 
   &__steps {
+    @include responsive(645px) {      
+      display: none;
+    }
     display: flex;
     padding: 2.1rem;
     background-color: rgba($color: #ffffff, $alpha: .6);
@@ -227,12 +302,28 @@ $padding-distance: 1.6rem;
     bottom: 0;
     left: 0;
     width: 100%;
+
+    .container {        
+      @include responsive(708px) {      
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+    }
   }
 
   &__step{
     display: flex;
     align-items: center;
     font-size: 1.2rem;
+    @include responsive(1120px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    @include responsive(708px) {      
+      margin-bottom: 1rem;
+      margin-right: 1.5rem;
+    }
   }
   &__step-number {
     display: flex;
@@ -244,6 +335,13 @@ $padding-distance: 1.6rem;
     // border: 4.3px solid $color-primary; this property is manipulate by vuejs
     border-radius: 50%;
     margin-right: 1.1rem;
+    @include responsive(1120px) {
+      margin-right: 0;
+    }
+    
+    @include responsive(708px) {      
+      margin-right: .5rem;
+    }
   }
   &__step-desc{
     margin-bottom: 0;
@@ -251,8 +349,14 @@ $padding-distance: 1.6rem;
 }
 
 $sw-height: 2.8rem;
+@include responsive(550px) {
+  $sw-height: 2.4rem;
+}
 .crePoll {
   padding: 5rem 0;
+  @include responsive(550px) {
+    padding: 3.5rem 0;
+  }
 
   &__form {
     margin-top: 2.5rem;
@@ -263,6 +367,9 @@ $sw-height: 2.8rem;
     width: 15rem;
     background-color: #EAEAEA;
     border-radius: 400rem;
+    @include responsive(550px) {
+      width: 13rem;
+    }
     div {
       height: 100%;
       width: 7.5rem;
@@ -274,6 +381,9 @@ $sw-height: 2.8rem;
       cursor: pointer;
       transition: all .2s;
       @include tiny-shadow(.3);
+      @include responsive(550px) {
+        width: 6.5rem;
+      }
 
       &:hover {
         transform: translateY(-.1rem);
@@ -299,6 +409,10 @@ $sw-height: 2.8rem;
       &:hover {
         fill: $color-third;
       }
+      @include responsive(550px) {
+        height: 1.3rem;
+        width: 1.3rem;
+      }
     }
     &--picture {
       fill: #666;
@@ -313,17 +427,29 @@ $sw-height: 2.8rem;
   &__setup {
     display: flex;
     justify-content: space-between;
+    @include responsive(550px) {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
   }
 
   &__config {
     display: flex;
     align-items: center;
+    @include responsive(550px) {
+      margin-bottom: 1.5rem;
+    }
     svg {
       margin-right: 1rem;
       height: 1.7rem;
       width: 1.7rem;
       fill: rgb(6, 50, 75);
       transition: all .4s;
+      @include responsive(550px) {
+        margin-right: 0.7rem;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
     }
     p{
       border-bottom: 1px solid #444;
@@ -349,6 +475,9 @@ $sw-height: 2.8rem;
     button {
       &:not(:last-child) {
         margin-right: 1.7rem;
+        @include responsive(550px) {
+          margin-right: 1rem;
+        }
       }
     }
   }
@@ -361,10 +490,24 @@ $sw-height: 2.8rem;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 6.5rem 0;
+  @include responsive(1040px) {
+    height: auto;
+    padding: 4rem 0;
+    padding-bottom: 7.5rem;
+  }
 
   .heading-1--white {
     text-align: center;
     margin-bottom: 3.8rem;
+    @include responsive(1040px) {
+      margin-bottom: 2rem;
+    }
+  }
+  @include responsive(550px) {
+    height: auto;
+    padding: 7.5rem 0;
+    padding-bottom: 8.5rem;
+    margin-top: -3rem;
   }
 
   &__group {
@@ -375,6 +518,21 @@ $sw-height: 2.8rem;
     grid-column-gap: 3rem;
     justify-content: center;
     align-content: center;
+    
+    @include responsive(1040px) {
+      grid-template-columns: repeat(2, 17rem);
+      grid-template-rows: repeat(2, 17rem);
+    }
+    @include responsive(708px) {      
+      grid-template-columns: repeat(2, 16rem);
+      grid-template-rows: repeat(2, 16rem);
+      grid-gap: 2rem;
+    }
+    @include responsive(550px) {      
+      grid-template-columns: repeat(1, 16rem);
+      grid-template-rows: auto;
+      grid-gap: 1rem;
+    }
   }
 
   &__each {
@@ -393,6 +551,10 @@ $sw-height: 2.8rem;
     img {
       height: 5rem;
       margin-bottom: 1.4rem;
+      @include responsive(708px) {      
+        margin-bottom: .12rem;
+      }
+      
     }
     h5{
       margin-bottom: 0.5rem;
@@ -404,11 +566,21 @@ $sw-height: 2.8rem;
 }
 
 .tutorial {
-  padding: 3.5rem;
+  padding: 3.5rem 0;
   text-align: center;
+  @include responsive(1040px) {
+    padding-top: 0;
+  }
 
   &__video {
     margin-top: 2rem;
+
+    @include responsive(1040px) {
+      iframe{
+        width: 100%;
+      }
+    }
+    
   }
 }
 
@@ -439,15 +611,27 @@ $sw-height: 2.8rem;
     @extend %footerLayout;
     padding-bottom: 1.5rem;
     border-bottom: solid 1px rgba($color: #fff, $alpha: .3);
+    @include responsive(990px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &__bottom {
     @extend %footerLayout;
     color: white;
     margin-top: 1.5rem;
+    @include responsive(793px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__logo {
     margin-right: 6rem;
+    @include responsive(990px) {
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__infos {
@@ -456,6 +640,10 @@ $sw-height: 2.8rem;
 
     &:not(:last-child) {
       margin-right: 6rem;
+      @include responsive(990px) {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
     }
   }
   &__info {

@@ -43,6 +43,11 @@
             Sign up
           </button>
         </div>
+        <div class="hero__responsive" @click="resMenu = true">
+          <svg>
+            <use xlink:href="./images/Icons/iconsList.svg#icon-menu"></use>
+          </svg>
+        </div>
       </div>
       <div class="hero__sub-heading container">
         <div style="width: 7rem;">
@@ -187,7 +192,7 @@
     </div>
 
     <!-- FEATURES START HERE -->
-    <div class="features">
+    <div class="features" id="features">
       <div class="container">
         <div class="heading-1--white">
           <h3>Features</h3>
@@ -204,7 +209,7 @@
     </div>
 
     <!-- TUTORIAL START HERE -->
-    <div class="tutorial">
+    <div class="tutorial" id="tutorial">
       <div class="heading-1 mb-4">
         <h3>Tutorial</h3>
         <p>Watch our tutorial video to understand the create poll flow</p>
@@ -256,7 +261,6 @@
             <p>LUZERN, SWITZERLAND</p>          
           </div>
         </div>
-        <hr>
       </div>
       <div class="container footer__bottom">
         <p>A product of AXON ACTIVE VIETNAM © 2020 | All rights reserved.</p>
@@ -268,6 +272,9 @@
     <div class="auth" v-if="signinPopup">
       <div class="backdrop" @click="signinPopup = false"></div>
       <div class="auth__popup">
+        <svg @click="signinPopup = false" class="btn-close btn-close--primary">
+          <use xlink:href="./images/Icons/iconsList.svg#icon-close"></use>
+        </svg>
         <div class="auth__left heading-1 mb-4">
           <h3>Sign in</h3>
           <p>If you are a new user please click 
@@ -301,6 +308,9 @@
     <div class="auth" v-if="signupPopup">
       <div class="backdrop" @click="signupPopup = false"></div>
       <div class="auth__popup">
+        <svg @click="signupPopup = false" class="btn-close btn-close--primary">
+          <use xlink:href="./images/Icons/iconsList.svg#icon-close"></use>
+        </svg>
         <div class="auth__left heading-1 mb-4">
           <h3>Sign up</h3>
           <p>If you have registered please click
@@ -346,8 +356,11 @@
           <h3>Setting</h3>
           <p>Customize your poll here</p>
         </div>
-        <form action="#" class="setting__form mt-4">
-          <div class="d-flex">
+        <svg @click="formSetting.isShow = false" class="btn-close btn-close--primary">
+          <use xlink:href="./images/Icons/iconsList.svg#icon-close"></use>
+        </svg>
+        <form action="#" class="setting__form mt-sm-2 mt-md-4">
+          <div class="setting__form-wrap">
             <div class="setting__form-left">
               <div class="form-group checkbox-style">
                 <input type="checkbox" id="optimize" name="optimize" checked disabled>
@@ -385,8 +398,9 @@
                 <input 
                   type="checkbox" 
                   id="setVotingTime" 
-                  @change="setVotingTime()" 
-                  name="setting">
+                  @change="setVotingTime" 
+                  name="setting"
+                  :checked="formSetting.setVotingTime">
                 <label for="setVotingTime">
                   <span class="checkbox-style__fake"></span>
                   <span>Set voting time</span>
@@ -429,7 +443,7 @@
                     </div>
                   </div>
     
-                  <div class="d-flex align-items-center setting__day-hour">
+                  <div class="setting__day-hour">
                     <div class="form-group">
                       <input type="text" class="form-style" name="days" placeholder="Days">
                       <div class="setting__day-icon">
@@ -457,7 +471,8 @@
                   type="checkbox" 
                   id="votingLimit" 
                   name="votingLimit"
-                  v-on:change="formSetting.setVotingLimit = !formSetting.setVotingLimit">
+                  v-on:change="setVotingLimit"
+                  :checked="formSetting.setVotingLimit">
                 <label for="votingLimit">
                   <span class="checkbox-style__fake"></span>
                   <span>Set voting limit</span>
@@ -524,13 +539,13 @@
                     href="#" 
                     class="mb-2"
                     @click="formSetting.addingGroupPopup = true">Add new group</a>
-                  <div class="form-group" v-if="addingUserSection">
+                  <div class="form-group slideFromLeft" v-if="addingUserSection">
                     <label for="addEmail">Add Emails</label>
                     <textarea name="addEmail" 
                               class="form-style form-style--textarea"
                               placeholder="separate by ',' Ex: test1@gmail.com, test2@gmail.com"></textarea>
                   </div>
-                  <div class="form-group" v-if="addingUserSection">
+                  <div class="form-group slideFromLeft" v-if="addingUserSection">
                     <label for="addEmail">Add Domains</label>
                     <textarea name="addEmail" 
                               class="form-style form-style--textarea"
@@ -585,7 +600,10 @@
     <!-- PREVIEW POPUP HERE -->
     <div class="preview" v-if="previewPopup">
       <div class="backdrop" @click="previewPopup = false"></div>
-      <div class="preview__popup">
+      <div class="preview__popup">                  
+        <svg @click="previewPopup = false" class="btn-close btn-close--primary">
+          <use xlink:href="./images/Icons/iconsList.svg#icon-close"></use>
+        </svg>
         <div class="heading-1">
           <h3>Preview</h3>
           <p>Let's see how your poll looks like when publicing</p>
@@ -639,6 +657,33 @@
                   @click="previewPopup = false">Cancel</button>
           <button class="btn-style btn-style--standard mr-2">Create poll</button>          
         </div>
+      </div>
+    </div>
+
+    <!-- REPONSIVE MENU HERE -->
+    <div class="menu-res" v-if="resMenu">
+      <div class="backdrop"></div>
+      <div class="menu-res__popup">
+        <nav>
+          <ul @click="resMenu = false">
+            <li>
+              <a href="#tutorial"> Tutorial </a>
+            </li>
+            <li>
+              <a href="#"> About us </a>
+            </li>
+            <li>
+              <a href="#features"> Features </a>
+            </li>
+
+          </ul>
+          <div class="d-flex" @click="resMenu = false">
+            <button class="btn-style btn-style--outline-white mr-2"
+                    @click="signinPopup = true">Sign in</button>
+            <button class="btn-style btn-style--standard"
+                    @click="signupPopup = true">Sign up</button>
+          </div>
+        </nav>
       </div>
     </div>
   </div>

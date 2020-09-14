@@ -235,7 +235,10 @@
 }
 
 .about-content {
-    padding: 3.5rem 0;
+    padding: 4rem 0;
+    @include responsive(550px) {
+        padding: 2rem;
+    }
     p {
         margin-right: 4rem;
         @include responsive(915px) {

@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1500;
+  z-index: 4000;
 }
 
 %commonPopup {
@@ -20,6 +20,7 @@
   border-radius: .7rem;
   animation: slideFromTop 1s ease;
   backface-visibility: hidden;
+  z-index: 5000;
   @include responsive(945px) {
     width: max-content;
   }
@@ -342,5 +343,36 @@ $indentation: 2.2rem;
         }
       }
     }
+  }
+}
+
+.detail {
+  &__popup {
+    @extend %commonPopup;
+    width: 49rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    svg {
+      height: 1.3rem;
+      width: 1.3rem;
+      fill: $color-primary;
+      margin-right: 0.7rem;
+    }
+    p {
+      margin-bottom: 0; 
+    }
+  }
+
+  &__chart {
+    // canvas {
+    //   width: 30rem !important;
+    //   height: 30rem !important;
+    // }
   }
 }

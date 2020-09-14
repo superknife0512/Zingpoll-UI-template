@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="./sass/main.css"> -->
+  <link rel="stylesheet" href="../sass/main.css">
+
+  <title>About page</title>
+</head>
+<body>
+  <div id="manage">
+    <div id="header">
+      <header class="nav-style">
+          <div class="container">
+              <div class="nav-style__logo">
+                  <a href="/">
+                      <img src="../images/UI/logo/logo.png" alt="logo">
+                  </a>
+              </div>
+              <ul class="nav-style__menu">
+                  <li>
+                      <a href="/#features">
+                          Features
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/#tutorial">
+                          Tutorial
+                      </a>
+                  </li>
+                  <li class="active">
+                      <a href="#">
+                          About
+                      </a>
+                  </li>
+              </ul>
+              <div class="nav-style__auth">
+                  <button 
+                    class="btn-style btn-style--lightGray mr-2"
+                    @click="signinPopup = true">Sign in</button>
+                  <button 
+                    class="btn-style btn-style--standard"
+                    @click="signupPopup = true"> Sign up </button>
+              </div>
+              <div class="nav-style__resp">
+                  <svg @click="resMenu = !resMenu">
+                      <use xlink:href="../images/Icons/iconsList.svg#icon-menu"></use>
+                  </svg>
+                  <div class="nav-style__resp-menu" v-if="resMenu">
+                      <ul>
+                          <li>
+                              <a href="/#features">
+                                  Features
+                              </a>
+                          </li>
+                          <li>
+                              <a href="/#tutorial">
+                                  Tutorial
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#">
+                                  About
+                              </a>
+                          </li>
+                      </ul>
+                      <div class="nav-style__auth">
+                          <button 
+                            class="btn-style btn-style--lightGray mr-2"
+                            @click="signinPopup = true">Sign in</button>
+                          <button 
+                            class="btn-style btn-style--standard"
+                            @click="signupPopup = true"> Sign up </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </header>
+      <div class="subhead">
+          <div class="container">
+              <form action="#" class="subhead__search">
+              <button>
+                  <svg>
+                      <use xlink:href="../images/Icons/iconsList.svg#icon-search"></use>
+                  </svg>
+              </button>
+              <input type="text" placeholder="Search the poll...">
+              </form>
+              <div class="subhead__language">
+                  <div class="d-flex align-items-center" 
+                      @click="showLangs = !showLangs">
+                    <h6>Languages</h6>
+                    <svg>
+                        <use xlink:href="../images/Icons/iconsList.svg#icon-cheveron-down"></use>
+                    </svg>
+                  </div>
+                  <div class="subhead__language-tip" v-if="showLangs">
+                    <div class="d-flex align-items-center mb-2"
+                        v-for="lang in listOfLanguages">
+                      <img :src="lang.img" alt="img"> |
+                      <span>{{ lang.desc }}</span>
+                    </div>
+                  </div>
+                </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="container content manage">
+      <div class="heading-1">
+        <h3>Manage Polls</h3>
+        <p>Where you can manage and update your polls</p>
+      </div>
+      <div class="manage__content">
+        <div class="manage__nav mr-4">
+          <ul>
+            <li :class="{'active': tableName === 'myPolls'}"
+                @click="tableName = 'myPolls'">
+              <p>My polls</p>
+              <span>15</span>
+            </li>
+            <li :class="{'active': tableName === 'myVotes'}"
+              @click="tableName = 'myVotes'">
+              <p>My Votes</p>
+              <span>5</span>
+            </li>
+            <li :class="{'active': tableName === 'myBin'}"
+              @click="tableName = 'myBin'">
+              <p>Recycle Bin</p>
+              <span>8</span>
+            </li>
+          </ul>
+        </div>
+        <!-- Dynamic table -->
+        <div class="manage__table" v-if="tableName === 'myPolls'">
+          <div class="manage__table-header">
+            <div class="form-group checkbox-style">
+              <input type="checkbox" id="question" name="question">
+              <label for="question">
+                <span class="checkbox-style__fake"></span>
+                <span>Question</span>
+              </label>
+            </div>
+            <h6>Visibility</h6>
+            <h6>Start/Stop</h6>
+            <h6>Votes</h6>
+            <h6>Changes</h6>
+          </div>
+          <div class="manage__table-row" 
+                v-for="(poll, i) of listOfPolls"
+                v-if="tableName === 'myPolls'"
+                id="myPolls">
+            <div class="form-group checkbox-style">
+              <input type="checkbox" :id="'pollName-'+ i"  :name="'pollName-'+ i">
+              <label  :for="'pollName-'+ i">
+                <span class="checkbox-style__fake"></span>
+                <span @click="openDetail(poll.name)">{{poll.name}}</span>
+              </label>
+            </div>
+            <p style="text-align: center;">{{ poll.visibility }}</p>
+            <svg>
+              <use 
+                :xlink:href="poll.isStart ? '../images/Icons/iconsList.svg#icon-play' : '../images/Icons/iconsList.svg#icon-stop'"
+                :style="{fill: poll.isStart ? '#00B2FF' : '#2F80ED'}"></use>
+            </svg>
+            <p>{{ poll.votes }}</p>
+           <div class="manage__table-change">
+             <svg class="edit mr-2" tooltip="edit it">
+               <use xlink:href="../images/Icons/iconsList.svg#icon-magic-wand"></use>
+             </svg>
+             <svg class="trash" tooltip="delete it">
+              <use xlink:href="../images/Icons/iconsList.svg#icon-bin"></use>
+            </svg>
+           </div>
+          </div>
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="manage__table" v-if="tableName === 'myVotes'">
+          <div class="manage__table-header">
+            <div class="form-group checkbox-style">
+              <input type="checkbox" id="question" name="question">
+              <label for="question">
+                <span class="checkbox-style__fake"></span>
+                <span>Question</span>
+              </label>
+            </div>
+            <h6>Visibility</h6>
+            <h6>Progess</h6>
+            <h6>Votes</h6>
+            <h6>Status</h6>
+          </div>
+          <div class="manage__table-row" 
+                v-for="(vote, i) of listOfVotes">
+            <div class="form-group checkbox-style">
+              <input type="checkbox" :id="'pollName-'+ i"  :name="'pollName-'+ i">
+              <label  :for="'pollName-'+ i">
+                <span class="checkbox-style__fake"></span>
+                <span>{{vote.name}}</span>
+              </label>
+            </div>
+            <p style="text-align: center;">{{ vote.visibility }}</p>
+            <p> {{vote.progress}} </p>
+            <p>{{ vote.votes }}</p>
+           <div class="manage__table-status">
+             {{ vote.status }}
+           </div>
+          </div>
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="manage__table" v-if="tableName === 'myBin'" >
+          <div class="manage__table-header" id="myBin">
+            <div class="form-group checkbox-style">
+              <input type="checkbox" id="question" name="question">
+              <label for="question">
+                <span class="checkbox-style__fake"></span>
+                <span>Question</span>
+              </label>
+            </div>
+            <h6>Restore</h6>
+            <h6>Delete</h6>
+          </div>
+          <!-- <div class="manage__table-row" 
+                v-for="(vote, i) of listOfVotes">
+            <div class="form-group checkbox-style">
+              <input type="checkbox" :id="'pollName-'+ i"  :name="'pollName-'+ i">
+              <label  :for="'pollName-'+ i">
+                <span class="checkbox-style__fake"></span>
+                <span>{{vote.name}}</span>
+              </label>
+            </div>
+            <p style="text-align: center;">{{ vote.visibility }}</p>
+            <p> {{vote.progress}} </p>
+            <p>{{ vote.votes }}</p>
+           <div class="manage__table-status">
+             {{ vote.status }}
+           </div>
+          </div> -->
+
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Dynamic table -->
+      </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer__top">
+          <a 
+            href="https://axonactive.com"
+            target="blank"
+              class="footer__logo">
+            <img src="../images/UI/logo/axon-logo.png" alt="Logo">
+          </a>
+          <div class="footer__download">
+            <div class="footer__download-google">
+              <a href="https://bom.to/nhbh69F"
+                 target="blank">
+                <img src="../images/UI/logo/google-play-badge.png" alt="google">
+                <img src="../images/UI/qr-gg.PNG" alt="qr">
+              </a>
+            </div>
+            <div class="footer__download-apple">
+              <a href="https://bom.to/6uf7gpz"
+                  target="blank" >
+                <img src="../images/UI/logo/badge-download-on-the-app-store.svg" alt="apple">
+                <img src="../images/UI/qr-apple.PNG" alt="qr">
+              </a>
+            </div>
+          </div>
+          <div class="footer__infos">
+            <div class="footer__info">
+              <svg>
+                <use xlink:href="../images/Icons/iconsList.svg#icon-location" />
+              </svg>
+              <p>DA NANG, VIET NAM</p>          
+            </div>
+            <div class="footer__info">
+              <svg>
+                <use xlink:href="../images/Icons/iconsList.svg#icon-location" />
+              </svg>
+              <p>HCM, VIET NAM</p>          
+            </div>
+            <div class="footer__info">
+              <svg>
+                <use xlink:href="../images/Icons/iconsList.svg#icon-location" />
+              </svg>
+              <p>SAN FRANCISCO, USA</p>          
+            </div>
+            <div class="footer__info">
+              <svg>
+                <use xlink:href="../images/Icons/iconsList.svg#icon-location" />
+              </svg>
+              <p>LUZERN, SWITZERLAND</p>          
+            </div>
+          </div>
+        </div>
+        <div class="container footer__bottom">
+          <p>A product of AXON ACTIVE VIETNAM © 2020 | All rights reserved.</p>
+          <p>Terms of Service | Privacy Statement</p>
+        </div>
+      </footer>
+
+    <!-- SIGN IN POPUP HERE -->
+    <div class="auth" v-if="signinPopup">
+      <div class="backdrop" @click="signinPopup = false"></div>
+      <div class="auth__popup">
+        <svg @click="signinPopup = false" class="btn-close btn-close--primary">
+          <use xlink:href="../images/Icons/iconsList.svg#icon-close"></use>
+        </svg>
+        <div class="auth__left heading-1 mb-4">
+          <h3>Sign in</h3>
+          <p>If you are a new user please click 
+            <a href="#" @click="switchAuth()">here to signup</a> 
+          </p>
+          <form action="#" >
+            <div class="form-group">
+              <label for="email">Email: </label>
+              <input 
+                type="text" 
+                class="form-style" 
+                name="email" 
+                placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="email">Password: </label>
+              <input type="password" class="form-style" name="password" placeholder="Enter your password">
+              <small class="text-danger" v-if="validate.email">Password is invalid</small>
+            </div>
+            <div class="auth__btns">
+              <a href="#">Forgot your password?</a>
+              <button class="btn-style btn-style--standard">
+                Sign in
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="auth__social">
+          <button class="btn-google mb-2">Sign in by google</button>
+          <button class="btn-fb">Sign in by facebook</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGN UP POPUP HERE -->
+    <div class="auth" v-if="signupPopup">
+      <div class="backdrop" @click="signupPopup = false"></div>
+      <div class="auth__popup">
+        <svg @click="signupPopup = false" class="btn-close btn-close--primary">
+          <use xlink:href="../images/Icons/iconsList.svg#icon-close"></use>
+        </svg>
+        <div class="auth__left heading-1 mb-4">
+          <h3>Sign up</h3>
+          <p>If you have registered please click
+            <a href="#" @click="switchAuth()">here to signin</a> 
+          </p>
+          <form action="#" @submit.prevent="onSignup">
+            <div class="form-group">
+              <label for="name">Name: </label>
+              <input type="text" class="form-style" name="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email: </label>
+              <input type="text" class="form-style" :class="{'form-style--error': validate.email}"
+                    name="email" placeholder="Enter your email"
+                    v-model="signupForm.email"  >
+               <small class="text-danger mt-2" v-if="validate.email">Email is invalid</small>
+            </div>
+            <div class="form-group">
+              <label for="email">Password: </label>
+              <input 
+                type="password" 
+                class="form-style" :class="{'form-style--error': validate.password}" 
+                name="password" placeholder="Enter your password">
+                <small class="text-danger mt-2" v-if="validate.password">Password is invalid</small>
+            </div>
+            <div class="form-group">
+              <label for="email">Confirm password: </label>
+              <input type="password" class="form-style" name="password" placeholder="Enter your password">
+            </div>
+            <div class="auth__btns">
+              <a href="#">Forgot your password?</a>
+              <button class="btn-style btn-style--standard">
+                Sign up
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="auth__social">
+          <button class="btn-google mb-2">Sign in by google</button>
+          <button class="btn-fb">Sign in by facebook</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" v-if="detail.isShow">
+      <div class="backdrop"></div>
+      <div class="detail__popup">
+        <svg class="btn-close btn-close--primary" @click="detail.isShow = false">
+          <use xlink:href="../images/Icons/iconsList.svg#icon-close"></use>
+        </svg>
+        <div class="heading-1">
+          <h4> {{detail.title}} </h4>
+        </div>
+        <div class="d-flex align-items-center">
+          <a href="#" class="mr-2"> Export | </a>
+          <a href="#" class="mr-2"> Live result | </a>
+          <a href="#" > Go to poll </a>
+        </div>
+        <div class="detail__date">
+          <svg>
+            <use xlink:href="../images/Icons/iconsList.svg#icon-calendar"></use>
+          </svg>
+          <p>20/09/2020</p>
+        </div>
+        <div class="detail__chart">
+          <canvas id="detailedChart" class="mr-2" style="position: relative;"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+<script src="../js/manage.js"></script>
+</html>

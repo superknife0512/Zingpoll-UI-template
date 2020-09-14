@@ -4,7 +4,7 @@
   border: none;
   outline: none;
   border-radius: 5px;
-  display: flex;
+  display: inline-block;
   align-items: center;
   cursor: pointer;
   transition: all .2s;
@@ -44,6 +44,14 @@
   &--primary {
     background-color: $color-primary;
     color: white;
+  }
+
+  &:disabled {
+    background-color: rgb(226, 226, 226);
+    color: rgb(167, 167, 167);
+    transform: none !important;
+    box-shadow: none;
+    cursor: not-allowed;
   }
 }
 

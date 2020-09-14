@@ -116,40 +116,97 @@
       </div>
     </div>
 
-    <div class="about-content container content">
-        <div class="heading-1 mb-4">
-            <h2>About us</h2>
-            <p>Understand what we do and why we're here</p>
-        </div>
-        <div class="d-flex ">
-            <p>
-                Axon Active is Swiss offshore software development company with strong expertise in Agile IT and a large portfolio of successful international projects, ranging from small businesses to highly complex multi-platform systems for large corporate clients. <br><br>
-
-                Axon Active builds solid partnerships with its clients by assembling tailored development teams in Vietnam who deliver high-quality, innovative solutions at a very competitive price. <br><br>
-
-                In 2008, Swiss-owned and managed, Axon Active created a high-performance, scalable software delivery infrastructure in Vietnam. The 300+ developers’ outsourcing organization offers the perfect mix of talent management, Agile and Scrum practices, technology skills and industry knowledge. <br> <br>
-
-                For more information about: <br>
-                - Axon services & expertise, please visit: 
-                <a href="https://www.axonactive.com" target="blank">
-                    www.axonactive.com
-                </a> <br>
-                - Axon social life, just take a tour:
-                <a href="https://www.fb.com/AxonActiveVietnam" target="blank">
-                    www.fb.com/AxonActiveVietnam
-                </a>
-                <br><br>
-                Axon Active has years of experience in application development. Besides ZingPoll, Axon launched a dozen of awesome applications:
-            </p>
-            <div class="about-content__imgs ml-2">
-                <img src="../images/UI/axon-img (1).png" alt="img1">
-                <img src="../images/UI/axon-img (2).png" alt="img2">
+    <div class="container content voting">
+      <div class="voting__content">      
+        <div class="voting__left">
+          <div class="heading-1">
+            <h3>Votes</h3>
+            <p>Choose your answer!</p>
+          </div>
+          <div class="voting__section">
+            <div class="voting__title">
+              <svg class="mr-2">
+                <use xlink:href="../images/Icons/iconsList.svg#icon-question"></use>
+              </svg>
+              <h4>Who is your favorite champion?</h4>            
             </div>
+  
+            <div class="voting__time">
+              <h5> 48:00:00 </h5>
+              <button class="btn-style btn-style--primary">
+                Start
+              </button>
+            </div>
+  
+            <div class="voting__title-action">
+              <div class="d-flex align-items-center mr-4">
+                <svg class="mr-2">
+                  <use xlink:href="../images/Icons/iconsList.svg#icon-stats-bars"></use>
+                </svg>
+                <a href="#">Detail</a>
+              </div>
+              <div class="d-flex align-items-center">
+                <svg class="mr-2">
+                  <use xlink:href="../images/Icons/iconsList.svg#icon-eye"></use>
+                </svg>
+                <a href="#">Result</a>
+              </div>
+            </div>
+            
+            <div class="form-group radio-style">
+              <input type="radio" name="answer" id="option1">
+              <label for="option1">
+                <span class="radio-style__fake"></span>
+                <span>Yasuo</span>
+              </label>
+              <img src="https://cdn.bongdaplus.vn/Assets/Media/2020/07/08/66/yasuo0.jpg" alt="yasuo">
+            </div>
+            <div class="form-group radio-style">
+              <input type="radio" name="answer" id="option2">
+              <label for="option2">
+                <span class="radio-style__fake"></span>
+                <span>Leesin</span>
+              </label>
+              <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTEhIQFRIVFxUSEhUVFQ8VEBUQFhUWFhUVFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGhAQGi0lHR0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAADBAIFAAEGBwj/xAA7EAABAwMCAwcCBQIEBwEAAAABAAIRAwQhEjEFQVEGEyJhcYGRobEywdHh8EJSM3Ki8QcUFSNiksKy/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAIxEAAgICAgIDAAMAAAAAAAAAAAECEQMhEjEEQRMiUTJhof/aAAwDAQACEQMRAD8A8ba9EEIDWorQhjDtRKT4KWmEwYIEJDLG0pF7mgbkgL6J7J8JYy3ph7QXADcbLxj/AIbcP7y4Bd+Fufde9Wj49FpCN7CU6VD1RnhIHRI2dsKTTOSTK3f8YpURL3gfdUzO09Cq6GulDq9kputFnWfOSqmvxamCQSh3vF26Had9lxdzXJJJTcq6FGNnQ8U4PSrjWwweq5CpcVLWpGqYTFxx5zWaGFc1c1y4ySSVzSabtI6ockqb0dBU7Tuq+B4Gkqg4lbtJIDiUq1rt4kDfr7dUdtywiQf1VLfYnGuirq8P80kWEFdEC13NJXVrGQgihBo1b7ortoKi7CE5xSGLVqWULSmxRcSABJOB7pl/DoMTJ+5TsXErAYQnlei8I7CmqwFx0GRqDoBAPquZ7VdnX2lXu3lpO4ImC0kw6DkbH4ULIuVFvE6soQZTFGnKgxietmK2zNIds6AXQm1BbTjMAzj+eSqrEZiCekLqqlq9ndkiMGNoyuLLOmdmNaOU4hQH1/NU3EKEQut7R02jTpn/AMh0XNcRcDGZWuKVpMyyKilLFj6aYLIyouXRZgxWpTgJR5T9ySQl6dDUqIFJWimTSCg9gQIE+IQURwUSEwNBbhbYpQmAYIgKFC2EhhWvzlGZg+SUR6bkhnpf/DfilIHu3AB3Irv+McYqgaaFMk9eS8AsrkscHA7ZC9o7HdpWvozUIBGMrSL9EzXsqncJua7tVdxA5yU7poUWwzL+ZVh2j4m3R4CM9FwNzdEndQ40yoybRfMvSHb4O6hxR+pvhPqq+3qYkrVSvOAnQdFfUJWUqBKurbhxIkwlLkQYbyUcKL52KmmdmpG44Z/UDneOqsO8AUqbpKegTYjbtbEhaddsBgmfmPlZeWjhOjLTu0Y+I3SFOxeTgEKWdEYQ7suadiHtDmgFCueGiMNI9UCvw2tSpmpqIggkAESJ8lY8NrVajNMtOJ3ExtkdVzyuO7NPjT/jsXs6bRUb4fCC2fScx5wl7um6hWLXCdLvmCuy4bwpugPaYc6WGQWlpkb9BuPQlKce4LVq0hVLQHN8Di51NpnGnUSRy58wJWePLEPjZR8V7VPqOZkiBEgwYjaR7/KQ45VdVp06h1Q3/teIzlu0HpErLvgFWm0l4biMa6RcZ6N1SfYIFH8Ia/VoGowImcfC1Sj2gafTBi3YaZcA7UC0b4gh04jyWrVmUd9TwhsCASRgTJjnz2CDTWno532XFudEHzj36L0J9+KtGmCweFukkRh3mFwVlRBAkyMFegcEt2ua0MaTrwRiNAxJJ2/Zed5Ubr9R1Y9bZS8b4AXUnPDhqGY5mf8AZcBeWrgYcMn7BemcfoVqTpAwG6N5Gxz9Vx/E6RAM/iiI6A/7rTxpSS2Tlins5GsMob4TddmUnVMLvRxMXqv5JnhbB4p6JJxynKNOT4ThMlCN0AHGEAuT1+yHYSZamIC4ZUHBGeEFxTA2wIi1TGFIMKYGgVIFCBU2lAB2BbcFEKdMycpATosJOASrrh1V48GRPJB4NdMpnI35q/LqR8QifJNIdkX1KjPC4kjkoMMlQrVS45KLQYgY3rRrWnLkBjcq8sqI3VCZhcQISFdwA9Uxxq4awYIlUZudXNTJ7HBELhozCHaXRaYOyI8JIrMsuO+2IT1iWgy6FTWlQhqsLZjjmMIk9Dj2Wd9U7zwkDScHpCNw/hlFrvA4wYLwHEAkYGc7SqS6quJ0tPl7LsOA2VOlRLXAmo7xeY6Bef5WRQjX6deFu9F/bOpQBkk7yWnHsFT8ah9vWaWwBADsxI1EAnpj2lW1lwnHeOOlgyT+QHVK8QvBWa+ixulgaXs/uL2mZPWRKxxY+MrLtvo8sJc3MnTMDyVfXqmYxHUTJVnxKmWE6fwOOWnafLoqiu7yj6n5XoxJmyf/ADHIgH03RKMHZVuZVjbDAjUevJo9+aowSt7Oj4DTJcGnYnpML12hSoUGDu+QAJmQ7aSR8HkvKeCzSqUalQEUdQL9JDjpG5g/zdeh3d8A5we2AR0IgEDTjptC8/yJP0dUcV6LTiFo2oyfC4Ectp5LyztJSDHkAzzBG0EYXoFtev0EbCDBjfGwC4vtnSmpiIy0eo3+pKz8aVTphKD4v+jz6/wql9SVacSmSCqZ2F66PPl2Rfkqw4e6AT0VcjUSTjkmyEGrS/KUfRhXLLX/ALZPwqh4M5TQmhao1BITb2BDbTymhE7d0CIRiXdFunRR6uMeSviKyoRKYUEViljRsKx4bZazJ2SttQ1FX9i4MEIGafwpvJLGm+mYBlWNzxBjeeVWC9LneSbEi54TQdVc1oHicQAPM7K8HCnMJaQZGSPKJn0jKn2Itia7CMRJ/wBJwuwvzTp12F2kCozSQcgSwsE/Rc0slSNlE5Clbpi6eWUyRvCZdS0VH0zu3Y8nNIkOHkQqq74rSOpjjHJdMWmrMmmclc3r3uMlPWQhueaBppavCceaXubrkNlLRSdFhc3IHNVb7qClX1UOm7xCUqCzqOEO1ZLcch1VpeVjGmcnZoXPf9SIENEBdN2JtdTzWrfgaJBdtK5/IyrFBzfo1xx5Og3C+FvaA9wMkw0ea7/hNmyk6a7XOeehYQI6iZP8wuI4j2gAq95TEMYQWTzcOaAO0eqXajJxv8rkx45TXOa2/wDDruNcUerPvGObGHNG3IR6DCrDZ02y5rdJcCAQSYkZIBXF8K7TFhgaIPI4HseXouptuLBzcgNbuQ2TJ5S7l7fKvi0yVpaOfvOy+tznuMDV4WxzIGT5b49OqpeLdmmsxn1xPuPhdVd8dJqHTpxgE5ERyVVddoIDsUmuMzU0ue7PNocYB84WisLZxl5w2nSHjcdRIgCMN5l35AZTVrQFw0t1Cm2kPCAB3jpJInk0ekrH8VptJdpa52fE/L5I35R7QqSrxHxFzMct+X8C2VszdFi2s+m4APeQ0yGlzi2Z/tOF29x2jbc0w8iHtgPA3b5jqz7Lzapfaltl6W5aYP3B3BWWTFyNIZeJ65T4w19MajtgnbHL7Ll+2FxpfAI04IzOZdqjp/SqCw4wXN0xEDacQeYPws4jdipTEzqbgz0/kfCwhg4ys1eWPHRX8Zh3iG/NUfdSukZQ1UycEt3jmOqq36A0xuuqMqVHNkjbt+yne2FOzOVCo6SVlMwVucvsuu/hpVNcJqrV5Jd4QhMAFOg2ShOTfD2SrRI3bU4IChfCHlOUKJLgmLmxBdlarolnIFGYhBFYsii2sG4WXVzGBugCtpbA3S46oGzZJO6YtzBCWCPRGQkwR6F2dv8AutDhEyF2fFbYVO6fE+EgnlAyB67ry4vc1oK9G7K8ZFxQgzqBLTzzAz9Vw+XFpWdGJjPHqbf+W71gBLW566MD6LyO/bqcSOZyvV7CuJNF8QJaNoM4IM8iPyXM8c7LGk41KYJozj+5h/tcPXmngy6SYTjs8/rNziVBxVleWx1bJGtShdiZgxVEo05US1GoOTAsbdg2Kv7++0Um024BGVy1CoZVq4F5HRc+XHykr6RvjlSdELgkUpzEx8gqqFeArPit94RTaBG/oOXuqR5WqQmx+2viDur607TFrdPPkVx4CYtyAZOfshwTBTaOodxJ9MNeQYeP9QMx8EfKp+IcTLjMlMs4wCNDgC3oQCPhVl9RpzLJjpP1U8VZbk60LvuiVB1RDiDzRGkdFdGdmU3K2trBz2AiN43Gx2+oKqizKseEcQNJ0HbY/uFErrRUKT2Eo2j2PcCD+F3WCBBkfCL3bjERDt5IGR6q+PEGhjnaRJGCPwjGcevJc5VvWuOQdwI2H0Wacn6OiUYR9nSCnSoWrwKjXvcWkhs6WtAODIkmT0XIOcDMJy54hDdLQ0D0kqsD8yPcJ48bV37Iy5IypL0IOGVtxU6jcqLhC3RxsNRyg1Tla1qVJsoERZTkq44XbZA+UlTZCabd6BhUgOhrPp0s81Q3t/qdIKQr3rnnJS5eqtidMSaURpUYUgEhBQ6SihKsOUwHIGTARrUeMILUxa4yUho6N9QaY3Ca7IcQNG5AOGP8DugM+E/zqVW8MAcJOyLWqNDsKckOSplRdbPTrjgpc+WkCST5eifsrkEaKkawIJMEOHn19VyfBu1PhaDkjB5yBsY6gCPNdJxO0FamKlMgOjUCNiN/ZeVKLi6Om77Oe7Q9lZcTSIk5FM4JH/iTgrirrg1QEgtOJnyjc+mF21lx2qx2moNTdi12R+3sqztvxGh3YZRa4Pqka8w0MkE48yAPQldOGcr4kyijiqlmD/U0Ac/sIGStiyxLTPLnv7otN7CRAJg5OM+jf3TVhVgxAcDO4cGlzciYIM5PyuuyeCA21oAzW86RsB/USp/9RosBADySInkPNDvLhxdqc3AwBAa0DoAMBVtV4J/CPrCYugVWrJlRasqHyCNa0p9EEmu5JE9EByuSwaSORCpimgCU2beaO+mOWUFtMmMwm6VAf3T1x9kmUgNZjjgNk+WfsgvBbg78/JWVPUPEPCB+H+4nqAk7xunBHinJ6HoEhuqC8Po63Z23Ponb60acjBReF2+lgPN2f0Q+I3IGEu2IA2sWs0/Poq5zoJP8lY+4PJLPKpRoHJsKaqyk6XfzZAlWfDrQQXuPLAGfclEnSIWxKs2EMmUa53KGxCJZAMRmNhSpUZTYt4ElMQrq6oN0/ot3FTMBBqOVITBlyjqWisTEDcUSmVBy2xIDbhlFaVoKYCAGbSgXzGw3TLKOohgKjwup+JvUJ3glDxud0TQw9Z4pwwct0GrVwleLVTrKjZP1YKTGg9vckFdj2c7QVKXOWn+l0xPUdCuP7qCrBt0NIGxCxniUy4yo9OtnUaze8exrSdyMHUd9sg+vVcR/xE4eKb23DagLXN7uCPF3gH4pGDM/RI0uMvA0yY6SfyMhGr9qXNbDmsIgDS4BwPXB3lcuPDPHK0auSkcnRrac5n+bJuzvoMzLZnzDgCAfLolHOBc50BrSSQOQkzAQHPEy2QV29i+0d2M3N1JxAn1J+TJ+qCahPVCJnmfgKEnqmS2MNEqwtBOBuqgVSEejcOBlu/LyRRNjlzdYLR6JdlInZQaDuZnnO8pimJ6+37JN0VFWN23DnuzDfdzR+afoW7Q0g92XAEtAcJJjAwZOUpRpSY0sB6vLnH/1Bj5IUb7jBok06Li4j8TiGtph3MMptge5lYuU26R0cYRVsje8QLyCG02REBjYz11El3yUk5zTJJOoRHTz90Ki8uJc4+ZiB6+QVhwyzbWfDGOIGTv7TyE/kVolRiouQRtzUcAB4WgQOseirrrUT1jn+Z8l19zwGqxheQ0fibGoEgjBGMY233BHJc93TnEB4hsw1uIJAmSRyA5fwtM6vjhqKe2VYYdyolFr3GSBnz5JVxVHPOl0Sc4LdGuW/hOOY5FCWJ0YtliaWoaoInkUS3sikravBEzCvKbyw5GFPQiVtaZS/HKgaNI35py6vg1kjdcxXrFxJO6pEtgi5YStQpAJiBraKGqDmoAXW2rAVIIEFCkosRCEAEoO05XR8LqjTqG53XL6lbcMqw1NMYPi/wDiFCoVQ10prilOQHD3VQ5+UmM6K3rtdzylK2CqunUIyE8K+oZ3SGEZW8lX1nueS7AAxJMARyHUot+SAB/d9h/AlHP1HOQMA8/36+6Owug4DBGoucDtGyjVYJlu3RDjEbt69D5jkhtcRjkig5BAfM+y2XA/wIYWy7omOzAJTVBqXZ9U7TGkSdzsEmOISo8A7AmM7J62e7RqMAcsZPL+RHNVu/r1XQ8Xtgy3YRMjQHehaYPz91mzWLYjQdH3XP1HS4nqT91ZtrQCTyE+/IfMKqY88v3TiickuhhgxBOkHfrHkFd8P4z3LSKLdGMPdBqSQJeeQd06YPIKgaYyd1Fz59P5um1ZHI6el2lqPp9y9tNzWjwGHNeBOJgw4Z6T1VJe3bjkHJGnl+Hy6eyFbVPF6ghau2wB6/qhIHNg/CBgz6A/motWmgIzqgiGiP1VDuwRRhauiYx/OSgfD6qL6xOJx05IohsyF0Bqamt/yt+y5slXxENA6AD6JSBCd25IvhN1wkXpoTNSptUWtR204VCAucs1rK8SgykBoBSACG5y21qQgpwhd8ZW+ag4ZQAxTqhWFnU3CpQmbatBQmMu21cQVX3dtmQja1PVKsRWZCxrzKeqsHNLutzyyEmh2WNS2NShrbk0jqd17s4J9jBVKF0nAnFux38LgQYLTgj4VLxKyNKo5h/pOD1Yfwke35rKElbiaTi6UgLT0MFYSDvjz/ZCWStDOycfzksC01yK1oJBHUYKBoat2taC504+/QefmjOioGlsDH15hV90/l7n1UKVRzTLSQfJKh8qLqlZkQXeuJx5mdldWlxTeSyq4mjUpmHNIJFRkEQduX0C5B905/8AiOefOf8A52ITHDbqPATiZYejtiPf7+qlxK5muJYhs+Zj4H6+6T1I1+TqHpCXVJESezZctgqMLXqmImHQQRuE7dVQ4QByEFV0otJ/L4RQGmqQ8slY76qAQOzfqoyiPpECeXXcIaYhnhlsalVjB/U4A/5Rl30BXTXlkZMJfsRZnW6uR4WAsb/ncMx6D/8AS6OlVaXEFc2TL9qXo2hD63+nIXNoeiratKN16BfUGRiFxXFIkwnjyciZwoQomXItUwt21KMlLXNWStyCDnKBcouKigRtOW4CWZRJGqWgTpyYzE/miFpaYOD+R2IPMIANdtbiEqVJ5UJSEZC1Cm1b0oGMW9TCYDkk3BTLCrQhrUCIKEAWmJwh6kRlSRB9k3sEdBwu7pUyCSCfMAx8qy7QVqF2xoc4trsB7p5FPu3D+x2nIB5dD7rhKzSD5LbK8LleKpck9m3yXGmg9Pg1w4SyhVcOrWucP9MoFfh9Vn+JSqsHV7KjR8kKz4bxUsMtMEbRIM9cK/HbirGmo1lQbTlrvcjB+FblNdIlRj+nCuZH8kfK3B35dVd8Su6FTIpaD5H9lTubBkT7KottdEyST7IO6lad6yse6VgVCNscQjB7Tu2D1bj6IIP6rAcoCxmtU1ATkjnzI8/NA0YwQfLmi0HCCIB9enkdx7LVSmD+H/1P5O5+hSH2Qb5yFtwHUH2UhnEj3+0qNWi5u4I+3ymPjojpCwUp2I91pFfbuAkj9fhAqIOwM7qErqbLgdGrQE+Crpw8bF28OHMZ9UKj2dYyXVXh0bNbIb7nf2WSzRtov45FBRpPdloMbeSm2yqF2kNJP+n5V3VI2EAdBsApUrmMBVyJotOHNFGlomYGfXmUi+8zIWG4ifMKqfVysYq5NmknSLYXznYVddUBM80S1cQFNxW0YUQ5WIVGQ0lU7jkq5u3eEqkWhDMWluEanbkiUAYxzSzSXQdWobYEQfy+FGvVkiIgANHWB188laWJCBytytrEgNAojXrFiBhZlSpuWLFQggMrRWliANhyg+l0WliABOkKTKpWLFIwmtTYVixUImKY6fooPtx6LFiQwT6cKELFiANtdCn3oO/ysWICyREjcev6rfekCJPmDt7BYsSKvRGm+CCeWUYVXk5hwPP/AGW1iH0JFrQ4hAhbr8Q1YWLFhGKs0cnQo+p7oLa8FYsWxDGa14Y0g4/ZJ95lYsSjFIG7LChUGlIXd7mAsWK2xC5rEoHdiVixSBstRaVxAhaWJgf/2Q==" alt="lee">
+            </div>
+            <div class="form-group radio-style">
+              <input type="radio" name="answer" id="option3">
+              <label for="option3">
+                <span class="radio-style__fake"></span>
+                <span>You want another champion? Please send them to us</span>
+              </label>            
+            </div>          
+  
+            <button class="btn-style btn-style--primary">
+              Vote now
+            </button>
+        </div>      
         </div>
+            
+        <div class="voting__right">
+          <img src="../images/UI/qr-code-poll.png" alt="qr-code">
+          <div class="d-flex align-items-center">
+            <svg>
+              <use xlink:href="../images/Icons/iconsList.svg#icon-user"></use>
+            </svg>
+            <p> Phan Huu Toan </p>
+          </div>
+          <div class="d-flex align-items-center">
+            <svg>
+              <use xlink:href="../images/Icons/iconsList.svg#icon-calendar"></use>
+            </svg>
+            <p> Created at 20/08/2020 </p>
+          </div>
+          <div class="d-flex align-items-center">
+            <svg>
+              <use xlink:href="../images/Icons/iconsList.svg#icon-unlocked"></use>
+            </svg>
+            <p> Public </p>
+          </div>
+        </div>  
+      </div>
     </div>
-    <!-- <div class="container mt-4">
-        <img src="../images/UI/sample.svg" alt="images" style="width:90%">
-    </div> -->
+
     <footer class="footer">
         <div class="container footer__top">
           <a 

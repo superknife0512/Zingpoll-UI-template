@@ -352,6 +352,8 @@ $indentation: 2.2rem;
     width: 49rem;
     display: flex;
     flex-direction: column;
+    max-height: 80vh;
+    overflow: auto;
   }
 
   &__date {
@@ -369,10 +371,6 @@ $indentation: 2.2rem;
     }
   }
 
-  &__chart {
-    // canvas {
-    //   width: 30rem !important;
-    //   height: 30rem !important;
-    // }
-  }
+  // &__chart {
+  // }
 }

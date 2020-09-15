@@ -1,6 +1,6 @@
 .voting {
   &__content {
-    margin: 3rem 0;
+    margin: 4rem 0;
     display: flex;
     justify-content: space-between;
     @include responsive(640px) {
@@ -9,7 +9,6 @@
   }
 
   &__section {
-    padding: 1.5rem 0;
     margin-bottom: 1.5rem;
     overflow-Y: auto;
     img {

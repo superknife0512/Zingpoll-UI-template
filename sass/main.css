@@ -974,6 +974,7 @@ input[type=radio]:checked + label .radio-style__fake::after {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
+  text-transform: capitalize;
 }
 
 .detail__popup {

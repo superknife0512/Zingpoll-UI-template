@@ -4,12 +4,15 @@
 @import './mixins/responsive'; 
 @import './helpers';
 @import './mixins/boxShadow';
+
 @import './animations/slide';
+@import './animations/popin';
 
 @import './components/form';
 @import './components/heading';
 @import './components/button';
 @import './components/popup';
+@import './components/navbar';
 
 @import './pages/home';
 @import './pages/about';

@@ -54,6 +54,10 @@
     display: inline-block;
     margin-right: 0.7rem;
     cursor: pointer;
+    @include responsive(550px) {
+      height: 1.4rem;
+      width: 1.4rem;
+    }
   }
 
   input:checked + label &__fake {
@@ -68,6 +72,11 @@
       top: 2px;
       left: 2px;
       animation: popin .5s ease-in-out;
+      cursor: pointer;
+      @include responsive(550px) {
+        height: 1.1rem;
+        width: 1.1rem;
+      }
     }
   } 
 
@@ -104,17 +113,5 @@
       border-radius: 50%;
       animation: popin .4s ease-in;
     }
-  }
-}
-
-@keyframes popin {
-  0% {
-    transform: scale(.6);
-  }
-  50% {
-    transform: scale(1.4);
-  }
-  100% {
-    transform: scale(1);
   }
 }

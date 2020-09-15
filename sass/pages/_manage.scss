@@ -7,7 +7,7 @@
     justify-content: space-between;
     @include responsive(1057px) {
       flex-direction: column;
-      overflow: auto;
+      // overflow: auto;
     }
   }
   &__nav {
@@ -89,6 +89,10 @@
         width: 16rem;
       }
     }
+  }
+
+  &__table-wrapper {
+    overflow: auto;
   }
 
   &__table {

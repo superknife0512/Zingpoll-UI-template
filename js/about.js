@@ -4,7 +4,7 @@ new Vue ({
     listOfLanguages: [
       {
         img: '../images/Icons/VN.png',
-        desc: 'Viet nam'
+        desc: 'Viet nam 2'
       },
       {
         img: '../images/Icons/UK.jpg',

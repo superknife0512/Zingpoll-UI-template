@@ -8,7 +8,7 @@ new Vue ({
       },
       {
         img: '../images/Icons/UK.jpg',
-        desc: 'English'
+        desc: 'English 2'
       },
       {
         img: '../images/Icons/Indo.jpg',
